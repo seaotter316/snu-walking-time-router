@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #111827;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #e5e7eb;
+}
+
+.panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: min(340px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.panel-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.panel h1 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.panel p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+.point-list {
+  display: grid;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.point-row {
+  display: grid;
+  grid-template-columns: 14px 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  font-size: 13px;
+}
+
+.point-row strong {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 650;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.start-dot,
+.start-marker {
+  background: #16a34a;
+}
+
+.end-dot,
+.end-marker {
+  background: #dc2626;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 86px;
+  gap: 8px;
+}
+
+button {
+  min-height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.primary {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+button.primary:hover {
+  background: #1f2937;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.summary div {
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.summary span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.summary strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 18px;
+}
+
+.warning {
+  grid-column: 1 / -1;
+  padding: 8px 9px;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.layers {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.layers h2 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.layers label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.layers input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.point-marker {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.3);
+}
+
+.leaflet-boundary-pane,
+.leaflet-plaza-pane,
+.leaflet-edge-pane,
+.leaflet-route-pane {
+  pointer-events: none;
+}
+
+.leaflet-point-pane {
+  pointer-events: auto;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #map {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 52vh;
+  }
+
+  .panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-height: 48vh;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    box-shadow: 0 -8px 20px rgba(17, 24, 39, 0.14);
+  }
+
+  .point-marker {
+    width: 24px;
+    height: 24px;
+  }
+}

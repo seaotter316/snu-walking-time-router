@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>서울대 도보 시간</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="/static/style.css?v=dev6" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
+    <script src="/static/app.js?v=dev6" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <div id="map" aria-label="서울대 관악캠퍼스 도보 지도"></div>
+
+      <aside class="panel" aria-label="경로 선택 및 결과">
+        <header class="panel-header">
+          <h1>서울대 도보 시간</h1>
+          <p id="statusText">출발지를 선택하세요.</p>
+        </header>
+
+        <section class="point-list" aria-label="선택 좌표">
+          <div class="point-row">
+            <span class="dot start-dot"></span>
+            <span>출발</span>
+            <strong id="startText">미선택</strong>
+          </div>
+          <div class="point-row">
+            <span class="dot end-dot"></span>
+            <span>도착</span>
+            <strong id="endText">미선택</strong>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button id="routeButton" class="primary" type="button" disabled>경로 찾기</button>
+          <button id="resetButton" type="button">초기화</button>
+        </div>
+
+        <section id="summaryPanel" class="summary" hidden>
+          <div>
+            <span>예상 시간</span>
+            <strong id="timeValue">-</strong>
+          </div>
+          <div>
+            <span>거리</span>
+            <strong id="distanceValue">-</strong>
+          </div>
+          <div>
+            <span>상승</span>
+            <strong id="ascentValue">-</strong>
+          </div>
+          <div>
+            <span>하강</span>
+            <strong id="descentValue">-</strong>
+          </div>
+          <p id="snapWarning" class="warning" hidden></p>
+        </section>
+
+        <section class="layers" aria-label="지도 레이어">
+          <h2>레이어</h2>
+          <label><input type="checkbox" data-layer="campus_boundary" checked /> 캠퍼스 경계</label>
+          <label><input type="checkbox" data-layer="osm_edges" /> OSM 보행 엣지</label>
+          <label><input type="checkbox" data-layer="entrances" /> 건물 입구</label>
+          <label><input type="checkbox" data-layer="elevation_nodes" /> 고도 노드</label>
+          <label><input type="checkbox" data-layer="lawn_plaza" /> 잔디광장</label>
+        </section>
+      </aside>
+    </main>
+  </body>
+</html>

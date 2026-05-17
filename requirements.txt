@@ -1,0 +1,7 @@
+osmnx
+geopandas
+networkx
+folium
+requests
+fastapi
+uvicorn

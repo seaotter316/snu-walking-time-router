@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Local caches and generated raw API responses
+cache/
+data/raw/
+
+# Generated review artifacts
+outputs/
+
+# Local logs and runtime files
+*.log
+*.out
+*.err
+*.pid
+
+# Environment variables and secrets
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

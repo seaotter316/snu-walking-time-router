@@ -1,0 +1,100 @@
+{
+  "areas": [
+    {
+      "id": "lawn_plaza",
+      "name": "서울대 잔디광장",
+      "polygon_lon_lat": [
+        [126.9499099, 37.4604256],
+        [126.9506876, 37.4610799],
+        [126.9511786, 37.4606035],
+        [126.9504057, 37.4600441],
+        [126.9499099, 37.4604256]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    }
+  ],
+  "nodes": [
+    {
+      "id": -100001,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 서측 꼭짓점",
+      "x": 126.9499099,
+      "y": 37.4604256,
+      "elevation_m": 77.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100002,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 북측 꼭짓점",
+      "x": 126.9506876,
+      "y": 37.4610799,
+      "elevation_m": 83.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100003,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 동측 꼭짓점",
+      "x": 126.9511786,
+      "y": 37.4606035,
+      "elevation_m": 85.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100004,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 남측 꼭짓점",
+      "x": 126.9504057,
+      "y": 37.4600441,
+      "elevation_m": 87.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100005,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 북서 변 중앙",
+      "x": 126.9502988,
+      "y": 37.4607528,
+      "elevation_m": 87.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100006,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 남동 변 중앙",
+      "x": 126.9507922,
+      "y": 37.4603238,
+      "elevation_m": 87.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100007,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 동북측 OSM 연결점",
+      "x": 126.950907,
+      "y": 37.4608927,
+      "elevation_m": 83.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -100008,
+      "feature_id": "lawn_plaza",
+      "name": "잔디광장 서남측 OSM 연결점",
+      "x": 126.9500497,
+      "y": 37.4602836,
+      "elevation_m": 87.0,
+      "connect_to_network": true,
+      "connector_walk_type": "plaza_connector"
+    }
+  ],
+  "edges": []
+}

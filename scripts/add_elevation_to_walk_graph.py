@@ -15,8 +15,6 @@ OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 
 GRAPH_PATH = PROCESSED_DIR / "snu_walk_base.graphml"
 ELEVATION_GRAPH_PATH = PROCESSED_DIR / "snu_walk_elevation.graphml"
-ELEVATION_NODES_PATH = PROCESSED_DIR / "snu_walk_nodes_elevation.geojson"
-ELEVATION_EDGES_PATH = PROCESSED_DIR / "snu_walk_edges_elevation.geojson"
 
 OPEN_METEO_ELEVATION_URL = "https://api.open-meteo.com/v1/elevation"
 OPEN_TOPO_DATA_URL = "https://api.opentopodata.org/v1/srtm90m"
@@ -124,9 +122,6 @@ def add_edge_grades(G: nx.MultiDiGraph) -> nx.MultiDiGraph:
 
 def save_outputs(G: nx.MultiDiGraph, source_note: str) -> dict:
     ox.save_graphml(G, ELEVATION_GRAPH_PATH)
-    nodes, edges = ox.graph_to_gdfs(G)
-    nodes.reset_index().to_file(ELEVATION_NODES_PATH, driver="GeoJSON")
-    edges.reset_index().to_file(ELEVATION_EDGES_PATH, driver="GeoJSON")
 
     elevations = [float(data["elevation_m"]) for _, data in G.nodes(data=True)]
     grades = [

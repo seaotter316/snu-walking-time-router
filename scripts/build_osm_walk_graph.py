@@ -6,11 +6,9 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import folium
-import geopandas as gpd
 import networkx as nx
 import osmnx as ox
-from shapely.geometry import LineString, Polygon, mapping
+from shapely.geometry import Polygon
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -134,105 +132,6 @@ def latest_overpass_timestamp() -> dict[str, str | None]:
     }
 
 
-def save_geojson(nodes, edges) -> None:
-    nodes_out = nodes.reset_index()
-    edges_out = edges.reset_index()
-    nodes_out.to_file(PROCESSED_DIR / "snu_walk_nodes.geojson", driver="GeoJSON")
-    edges_out.to_file(PROCESSED_DIR / "snu_walk_edges.geojson", driver="GeoJSON")
-
-
-def edge_lines(edges):
-    for _, edge in edges.iterrows():
-        geometry = edge.geometry
-        if geometry is None:
-            continue
-        if isinstance(geometry, LineString):
-            coords = [(lat, lon) for lon, lat in geometry.coords]
-            popup = f"highway={edge.get('highway')}<br>length={edge.get('length', 0):.1f}m"
-            yield coords, popup
-
-
-def save_html_map(nodes, edges, boundary, boundary_name: str) -> None:
-    center_lat = float(nodes.geometry.y.mean())
-    center_lon = float(nodes.geometry.x.mean())
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=16, tiles="OpenStreetMap")
-
-    folium.GeoJson(
-        {
-            "type": "Feature",
-            "properties": {"name": boundary_name},
-            "geometry": mapping(boundary),
-        },
-        name=boundary_name,
-        style_function=lambda _: {
-            "color": "#ef4444",
-            "weight": 2,
-            "fillOpacity": 0.02,
-        },
-        interactive=False,
-    ).add_to(m)
-
-    for coords, popup in edge_lines(edges):
-        folium.PolyLine(
-            coords,
-            color="#2563eb",
-            weight=3,
-            opacity=0.75,
-            popup=popup,
-        ).add_to(m)
-
-    entrances_path = PROCESSED_DIR / "snu_osm_entrances.geojson"
-    if entrances_path.exists():
-        entrances = gpd.read_file(entrances_path)
-        entrances = entrances[entrances.geometry.apply(lambda geometry: boundary.covers(geometry))]
-        entrance_group = folium.FeatureGroup(name="건물 입구", show=True)
-        for _, entrance in entrances.iterrows():
-            geometry = entrance.geometry
-            if geometry is None or geometry.geom_type != "Point":
-                continue
-            popup = f"entrance={entrance.get('entrance', '')}"
-            folium.CircleMarker(
-                location=[geometry.y, geometry.x],
-                radius=4,
-                color="#c2410c",
-                weight=1,
-                fill=True,
-                fill_color="#f97316",
-                fill_opacity=0.9,
-                popup=popup,
-                tooltip="건물 입구",
-            ).add_to(entrance_group)
-        entrance_group.add_to(m)
-
-    elevation_nodes_path = PROCESSED_DIR / "snu_walk_nodes_elevation.geojson"
-    if elevation_nodes_path.exists():
-        elevation_nodes = gpd.read_file(elevation_nodes_path)
-        elevation_nodes = elevation_nodes[
-            elevation_nodes.geometry.apply(lambda geometry: boundary.covers(geometry))
-        ]
-        elevation_group = folium.FeatureGroup(name="노드 고도", show=True)
-        for _, node in elevation_nodes.iterrows():
-            geometry = node.geometry
-            elevation = node.get("elevation_m")
-            if geometry is None or geometry.geom_type != "Point" or elevation is None:
-                continue
-            folium.CircleMarker(
-                location=[geometry.y, geometry.x],
-                radius=5,
-                color="#0f766e",
-                weight=1,
-                fill=True,
-                fill_color="#14b8a6",
-                fill_opacity=0.85,
-                popup=f"고도={float(elevation):.1f}m",
-                tooltip=f"고도 {float(elevation):.1f}m",
-            ).add_to(elevation_group)
-        elevation_group.add_to(m)
-
-    folium.LayerControl().add_to(m)
-    m.save(OUTPUTS_DIR / "snu_walk_base.html")
-
-
 def graph_stats(
     G: nx.MultiDiGraph,
     boundary_name: str,
@@ -282,9 +181,6 @@ def main() -> None:
     G, removed_nodes, removed_edges = keep_only_inside_boundary(G, boundary)
 
     ox.save_graphml(G, PROCESSED_DIR / "snu_walk_base.graphml")
-    nodes, edges = ox.graph_to_gdfs(G)
-    save_geojson(nodes, edges)
-    save_html_map(nodes, edges, boundary, boundary_name)
 
     stats = graph_stats(G, boundary_name, removed_nodes, removed_edges)
     (OUTPUTS_DIR / "snu_walk_base_stats.json").write_text(

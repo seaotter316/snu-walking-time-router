@@ -377,11 +377,11 @@ function createLayer(layerName, data) {
     });
   }
 
-  if (layerName === "lawn_plaza") {
-    const polygonLayer = L.geoJSON(data, {
+  if (layerName === "manual_features") {
+    const areaLayer = L.geoJSON(data, {
       pane: "plazaPane",
       interactive: false,
-      filter: (feature) => feature.geometry?.type !== "Point",
+      filter: (feature) => feature.properties?.kind === "area",
       style: {
         color: "#16a34a",
         weight: 2,
@@ -390,9 +390,20 @@ function createLayer(layerName, data) {
       },
     });
 
-    const gateLayer = L.geoJSON(data, {
+    const edgeLayer = L.geoJSON(data, {
+      pane: "edgePane",
+      interactive: false,
+      filter: (feature) => feature.properties?.kind === "edge",
+      style: (feature) => ({
+        color: feature.properties?.walk_type === "plaza_crossing" ? "#dc2626" : "#f97316",
+        weight: feature.properties?.walk_type === "plaza_crossing" ? 3 : 2,
+        opacity: 0.72,
+      }),
+    });
+
+    const nodeLayer = L.geoJSON(data, {
       pane: "pointPane",
-      filter: (feature) => feature.geometry?.type === "Point",
+      filter: (feature) => feature.properties?.kind === "node",
       pointToLayer: (feature, latlng) =>
         L.circleMarker(latlng, {
           pane: "pointPane",
@@ -403,11 +414,11 @@ function createLayer(layerName, data) {
           fillOpacity: 0.9,
           bubblingMouseEvents: false,
         })
-          .bindTooltip("잔디광장 진입점", { sticky: true })
-          .bindPopup(feature.properties?.name || "잔디광장 진입점"),
+          .bindTooltip(feature.properties?.name || "수동 노드", { sticky: true })
+          .bindPopup(feature.properties?.name || "수동 노드"),
     });
 
-    return L.layerGroup([polygonLayer, gateLayer]);
+    return L.layerGroup([areaLayer, edgeLayer, nodeLayer]);
   }
 
   return L.geoJSON(data);

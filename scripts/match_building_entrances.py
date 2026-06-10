@@ -17,7 +17,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 PROCESSED_DIR = DATA_DIR / "processed"
 
-BUILDING_POLYGONS_PATH = OUTPUTS_DIR / "snu_building_polygons_from_screenshot.geojson"
+BUILDING_POLYGONS_PATH = PROCESSED_DIR / "snu_osm_buildings.geojson"
 ROUTING_NODES_PATH = DATA_DIR / "processed" / "snu_routing_nodes.geojson"
 MANUAL_CONFIG_PATH = DATA_DIR / "manual" / "walk_network_additions.json"
 
@@ -29,7 +29,7 @@ ENTRANCES_WITH_FLOORS_PATH = OUTPUTS_DIR / "snu_building_entrances_with_floors.g
 PROCESSED_MATCHES_JSON_PATH = PROCESSED_DIR / "snu_building_entrance_matches.json"
 PROCESSED_ENTRANCES_WITH_FLOORS_PATH = PROCESSED_DIR / "snu_building_entrances_with_floors.geojson"
 
-MATCH_BUFFER_M = 4.0
+MATCH_BUFFER_M = 6.0
 DEFAULT_FLOOR_HEIGHT_M = 3.0
 
 TO_UTM = Transformer.from_crs("EPSG:4326", "EPSG:32652", always_xy=True).transform

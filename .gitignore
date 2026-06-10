@@ -38,3 +38,8 @@ outputs/
 Thumbs.db
 .idea/
 .vscode/
+
+# Other miscellaneous files
+graph_update/
+opendataloader_output/
+tmp/

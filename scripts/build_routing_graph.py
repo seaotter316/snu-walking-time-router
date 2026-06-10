@@ -61,6 +61,10 @@ AUTO_STITCH_MAX_DISTANCE_M = 8.0
 AUTO_STITCH_NODE_BASE = -700000
 AUTO_STITCH_FEATURE_ID = "auto_component_stitch"
 AUTO_STITCH_WALK_TYPE = "entrance_connector"
+NEAR_NODE_STITCH_DISTANCE_M = 2.5
+NEAR_SHUTTLE_NODE_STITCH_DISTANCE_M = 12.0
+NEAR_NODE_MAX_ELEVATION_DELTA_M = 5.0
+NEAR_NODE_STITCH_FEATURE_ID = "auto_near_node_stitch"
 WALK_TYPE_PRIORITY = {
     "pedestrian": 0,
     "footway": 1,
@@ -1028,6 +1032,74 @@ def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | 
     }
 
 
+def is_near_node_stitch_candidate(data: dict[str, Any]) -> bool:
+    if str(data.get("snap_exclude", "")).lower() == "true":
+        return False
+    if data.get("source") == "snu_shuttle" and data.get("node_role") != "shuttle_stop":
+        return False
+    return "x" in data and "y" in data
+
+
+def is_shuttle_stop_node(data: dict[str, Any]) -> bool:
+    return data.get("source") == "snu_shuttle" and data.get("node_role") == "shuttle_stop"
+
+
+def add_nearby_node_stitches(G: nx.MultiDiGraph) -> dict[str, int | float]:
+    nodes = [
+        (
+            node_id,
+            data,
+            *TO_UTM.transform(float(data["x"]), float(data["y"])),
+            float(data.get("elevation_m", 0.0) or 0.0),
+        )
+        for node_id, data in G.nodes(data=True)
+        if is_near_node_stitch_candidate(data)
+    ]
+
+    added = 0
+    shuttle_added = 0
+    general_added = 0
+    skipped_elevation = 0
+    for index, first in enumerate(nodes):
+        u, u_data, ux, uy, u_elevation = first
+        for v, v_data, vx, vy, v_elevation in nodes[index + 1 :]:
+            if G.has_edge(u, v) or G.has_edge(v, u):
+                continue
+
+            has_shuttle_stop = is_shuttle_stop_node(u_data) or is_shuttle_stop_node(v_data)
+            max_distance = NEAR_SHUTTLE_NODE_STITCH_DISTANCE_M if has_shuttle_stop else NEAR_NODE_STITCH_DISTANCE_M
+            distance = math.hypot(ux - vx, uy - vy)
+            if distance > max_distance:
+                continue
+
+            if abs(u_elevation - v_elevation) > NEAR_NODE_MAX_ELEVATION_DELTA_M:
+                skipped_elevation += 1
+                continue
+
+            walk_type = "shuttle_connector" if has_shuttle_stop else "entrance_connector"
+            added += add_edge(
+                G,
+                u,
+                v,
+                walk_type,
+                NEAR_NODE_STITCH_FEATURE_ID,
+                source="manual",
+            )
+            if has_shuttle_stop:
+                shuttle_added += 2
+            else:
+                general_added += 2
+
+    return {
+        "near_node_stitch_edges_added": added,
+        "near_node_stitch_general_edges_added": general_added,
+        "near_node_stitch_shuttle_edges_added": shuttle_added,
+        "near_node_stitch_elevation_skipped": skipped_elevation,
+        "near_node_stitch_distance_m": NEAR_NODE_STITCH_DISTANCE_M,
+        "near_node_stitch_shuttle_distance_m": NEAR_SHUTTLE_NODE_STITCH_DISTANCE_M,
+    }
+
+
 def add_snap_connection(
     G: nx.MultiDiGraph,
     node_id: Any,
@@ -1526,6 +1598,7 @@ def main() -> None:
     )
     shuttle_split_stats = split_registered_edges(graph, shuttle_split_registry)
     auto_stitch_stats = repair_small_disconnected_components(graph)
+    near_node_stitch_stats = add_nearby_node_stitches(graph)
     add_time_weights(graph, recompute=True)
     building_internal_stats = add_building_internal_edges(
         graph,
@@ -1556,6 +1629,7 @@ def main() -> None:
         **entrance_stats,
         **{f"shuttle_{key}": value for key, value in shuttle_split_stats.items()},
         **auto_stitch_stats,
+        **near_node_stitch_stats,
         **shuttle_stop_stats,
         **building_internal_stats,
         **shuttle_transit_stats,

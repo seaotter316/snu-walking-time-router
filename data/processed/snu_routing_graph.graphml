@@ -16535,6 +16535,34 @@
       <data key="d34">0.56</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4295682604" target="11010688975" id="0">
+      <data key="d28">LINESTRING (126.9523517 37.4510578, 126.9523773 37.4510556)</data>
+      <data key="d27">2.278299246328458</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.81</data>
+      <data key="d34">1.81</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4295682604" target="-200033" id="0">
+      <data key="d28">LINESTRING (126.9523517 37.4510578, 126.9523614 37.4510671)</data>
+      <data key="d27">1.342403356780579</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.07</data>
+      <data key="d34">1.07</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="1790475141" target="4748062201" id="0">
       <data key="d23">481787202</data>
       <data key="d24">service</data>
@@ -16580,6 +16608,20 @@
       <data key="d32">5.309</data>
       <data key="d33">5.96</data>
       <data key="d34">5.96</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="1790475141" target="-500008" id="0">
+      <data key="d28">LINESTRING (126.9519484 37.4499444, 126.951849 37.449935)</data>
+      <data key="d27">8.85704961287912</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">6.66</data>
+      <data key="d34">6.66</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="1789842812" target="4195859500" id="1">
@@ -22238,6 +22280,20 @@
       <data key="d34">8.24</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="1790402716" target="-500010" id="0">
+      <data key="d28">LINESTRING (126.9552076 37.4559106, 126.955245592118 37.455989614862)</data>
+      <data key="d27">9.391751038470359</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">7.07</data>
+      <data key="d34">7.07</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="7257052667" target="1790402716" id="0">
       <data key="d23">167659978</data>
       <data key="d24">service</data>
@@ -24118,6 +24174,34 @@
       <data key="d34">5.1</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="1793022854" target="-400074" id="0">
+      <data key="d28">LINESTRING (126.9531359 37.4604459, 126.9531264 37.4604485)</data>
+      <data key="d27">0.8886448070352185</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.71</data>
+      <data key="d34">0.71</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="1793022854" target="-400074000" id="0">
+      <data key="d28">LINESTRING (126.9531359 37.4604459, 126.95313594311779 37.460446004788324)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4527843424" target="4527756102" id="0">
       <data key="d23">168003059</data>
       <data key="d24">footway</data>
@@ -24429,6 +24513,20 @@
       <data key="d32">5.0367</data>
       <data key="d33">1.48</data>
       <data key="d34">1.48</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="1793027047" target="-700042" id="0">
+      <data key="d28">LINESTRING (126.9532616 37.4604106, 126.95328085032209 37.46042130385084)</data>
+      <data key="d27">2.076519948076914</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.970288</data>
+      <data key="d30">0.970288</data>
+      <data key="d32">0.1519</data>
+      <data key="d33">49.22</data>
+      <data key="d34">49.22</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4627664626" target="4564750855" id="0">
@@ -25272,6 +25370,20 @@
       <data key="d32">5.0367</data>
       <data key="d33">0.57</data>
       <data key="d34">0.57</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="1793248087" target="-400020" id="0">
+      <data key="d28">LINESTRING (126.9529693 37.4618098, 126.9529624 37.4618048)</data>
+      <data key="d27">0.8249840600657695</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">3.636434</data>
+      <data key="d30">3.636434</data>
+      <data key="d32">0.0</data>
+      <data key="d33">220722.67</data>
+      <data key="d34">220722.67</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="1793248072" target="1793248002" id="0">
@@ -26348,6 +26460,20 @@
       <data key="d34">8.0</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="1901811916" target="-200025" id="0">
+      <data key="d28">LINESTRING (126.95145 37.456329, 126.9514553 37.4563204)</data>
+      <data key="d27">1.0634556539410704</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.84</data>
+      <data key="d34">0.84</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4373965748" target="1901811916" id="0">
       <data key="d23">179742152</data>
       <data key="d24">footway</data>
@@ -26380,6 +26506,20 @@
       <data key="d34">0.32</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="13617883879" target="-200028" id="0">
+      <data key="d28">LINESTRING (126.9514663 37.4562271, 126.951476 37.4562322)</data>
+      <data key="d27">1.0280821160629199</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.82</data>
+      <data key="d34">0.82</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="13617883878" target="-200026000" id="0">
       <data key="d23">1485386285</data>
       <data key="d24">footway</data>
@@ -26394,6 +26534,20 @@
       <data key="d32">5.0367</data>
       <data key="d33">0.07</data>
       <data key="d34">0.07</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="13617883878" target="-200026" id="0">
+      <data key="d28">LINESTRING (126.9514339 37.4564299, 126.9514446 37.4564301)</data>
+      <data key="d27">0.9469660880783405</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.75</data>
+      <data key="d34">0.75</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="1966229946" target="3927957308" id="0">
@@ -27320,6 +27474,20 @@
       <data key="d32">5.0367</data>
       <data key="d33">0.42</data>
       <data key="d34">0.42</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="2548591999" target="4562091891" id="0">
+      <data key="d28">LINESTRING (126.9513413 37.4579373, 126.9513625 37.457925)</data>
+      <data key="d27">2.3198641904658057</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.84</data>
+      <data key="d34">1.84</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="2548592006" target="4532193683" id="0">
@@ -29843,6 +30011,34 @@
       <data key="d34">1.16</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="7257096414" target="4631533060" id="0">
+      <data key="d28">LINESTRING (126.9526779 37.4518057, 126.9526683 37.4517847)</data>
+      <data key="d27">2.480681874557039</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.97</data>
+      <data key="d34">1.97</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="7257096414" target="-200034" id="0">
+      <data key="d28">LINESTRING (126.9526779 37.4518057, 126.9526785 37.4517907)</data>
+      <data key="d27">1.665644807155937</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.32</data>
+      <data key="d34">1.32</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="13478432942" target="3901497904" id="0">
       <data key="d23">386803742</data>
       <data key="d24">steps</data>
@@ -30109,6 +30305,20 @@
       <data key="d32">4.7849</data>
       <data key="d33">2.04</data>
       <data key="d34">2.04</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="3902467478" target="4752485021000" id="0">
+      <data key="d28">LINESTRING (126.9541923 37.4635571, 126.95421253488243 37.46356307402048)</data>
+      <data key="d27">1.9089963477050422</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.30229</data>
+      <data key="d30">0.30229</data>
+      <data key="d32">2.2331</data>
+      <data key="d33">3.08</data>
+      <data key="d34">3.08</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="3927939013" target="3927939014" id="0">
@@ -31192,6 +31402,34 @@
       <data key="d34">1.16</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="11010688975" target="4295682604" id="0">
+      <data key="d28">LINESTRING (126.9523517 37.4510578, 126.9523773 37.4510556)</data>
+      <data key="d27">2.278299246328458</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.81</data>
+      <data key="d34">1.81</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="11010688975" target="-200033" id="0">
+      <data key="d28">LINESTRING (126.9523773 37.4510556, 126.9523614 37.4510671)</data>
+      <data key="d27">1.8995762775813927</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.51</data>
+      <data key="d34">1.51</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4295682605" target="11010688975" id="0">
       <data key="d23">430289536</data>
       <data key="d24">service</data>
@@ -31933,6 +32171,20 @@
       <data key="d32">3.5257</data>
       <data key="d33">38.92</data>
       <data key="d34">38.92</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4514838235" target="-400034" id="0">
+      <data key="d28">LINESTRING (126.9541033 37.4647151, 126.9541016 37.4646935)</data>
+      <data key="d27">2.402026272687454</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.91</data>
+      <data key="d34">1.91</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4565095054" target="4514838229" id="0">
@@ -33256,6 +33508,20 @@
       <data key="d34">1.34</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4527864813" target="-400008" id="0">
+      <data key="d28">LINESTRING (126.952744 37.46338, 126.9527642 37.4633889)</data>
+      <data key="d27">2.0418967186796513</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.62</data>
+      <data key="d34">1.62</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4527864814" target="4527864813" id="0">
       <data key="d23">456539213</data>
       <data key="d24">footway</data>
@@ -34145,6 +34411,20 @@
       <data key="d34">33.23</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564623338" target="-400019" id="0">
+      <data key="d28">LINESTRING (126.9532515 37.4618199, 126.9532747 37.4618162)</data>
+      <data key="d27">2.0931985304525593</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">2.210023</data>
+      <data key="d30">2.210023</data>
+      <data key="d32">0.002</data>
+      <data key="d33">3802.1</data>
+      <data key="d34">3802.1</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4564998577" target="4564998576" id="0">
       <data key="d23">460919047</data>
       <data key="d24">footway</data>
@@ -34499,6 +34779,20 @@
       <data key="d34">30.11</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="7255751585" target="7257096409" id="0">
+      <data key="d28">LINESTRING (126.9522493 37.4513318, 126.9522661 37.4513431)</data>
+      <data key="d27">1.944896185789631</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.54</data>
+      <data key="d34">1.54</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="7257096409" target="4631533057" id="0">
       <data key="d23">777628879</data>
       <data key="d24">footway</data>
@@ -34542,6 +34836,20 @@
       <data key="d32">5.4137</data>
       <data key="d33">41.89</data>
       <data key="d34">41.89</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="7257096409" target="7255751585" id="0">
+      <data key="d28">LINESTRING (126.9522493 37.4513318, 126.9522661 37.4513431)</data>
+      <data key="d27">1.944896185789631</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.54</data>
+      <data key="d34">1.54</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4631533057" target="7255751585" id="0">
@@ -34633,6 +34941,34 @@
       <data key="d32">4.7849</data>
       <data key="d33">0.7</data>
       <data key="d34">0.7</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4631533060" target="7257096414" id="0">
+      <data key="d28">LINESTRING (126.9526779 37.4518057, 126.9526683 37.4517847)</data>
+      <data key="d27">2.480681874557039</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.97</data>
+      <data key="d34">1.97</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4631533060" target="-200034" id="0">
+      <data key="d28">LINESTRING (126.9526683 37.4517847, 126.9526785 37.4517907)</data>
+      <data key="d27">1.1216041438578492</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.89</data>
+      <data key="d34">0.89</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="7257096408" target="4631533057" id="0">
@@ -35194,6 +35530,20 @@
       <data key="d32">2.2356</data>
       <data key="d33">59.5</data>
       <data key="d34">59.5</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4748062199" target="-200030" id="0">
+      <data key="d28">LINESTRING (126.9521104 37.4505154, 126.9521049 37.4505188)</data>
+      <data key="d27">0.615822146422281</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">4.871536</data>
+      <data key="d30">4.871536</data>
+      <data key="d32">0.0</data>
+      <data key="d33">12423683.88</data>
+      <data key="d34">12423683.88</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4748062200" target="4750534652" id="0">
@@ -39957,6 +40307,38 @@
       <data key="d34">28.68</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200013" target="-200023" id="0">
+      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200013" target="-200023" id="1">
+      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
+      <data key="d27">0.05</data>
+      <data key="d48">0.0</data>
+      <data key="d49">0.0</data>
+      <data key="d50">level</data>
+      <data key="d51">0.04</data>
+      <data key="d52">0.0</data>
+      <data key="d33">0.1</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_104</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">0.0</data>
+      <data key="d56">0.0</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-200013" target="-200006" id="0">
       <data key="d28">LINESTRING (126.9543718 37.45567, 126.95456 37.4558)</data>
       <data key="d27">22.033</data>
@@ -39991,24 +40373,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-200013" target="-200023" id="0">
-      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
-      <data key="d27">0.05</data>
-      <data key="d48">0.0</data>
-      <data key="d49">0.0</data>
-      <data key="d50">level</data>
-      <data key="d51">0.04</data>
-      <data key="d52">0.0</data>
-      <data key="d33">0.1</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_104</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">0.0</data>
-      <data key="d56">0.0</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-200013" target="4344097190" id="0">
@@ -40447,6 +40811,20 @@
       <data key="d34">1.49</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200017000" target="-200018" id="0">
+      <data key="d28">LINESTRING (126.95363876834797 37.45553659620513, 126.9536349 37.4555509)</data>
+      <data key="d27">1.6240057230939142</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.156693</data>
+      <data key="d30">0.156693</data>
+      <data key="d32">3.7172</data>
+      <data key="d33">1.57</data>
+      <data key="d34">1.57</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-200018" target="-200018000" id="0">
       <data key="d28">LINESTRING (126.9536349 37.4555509, 126.95363420015188 37.45555075651487)</data>
       <data key="d27">0.06393626559867248</data>
@@ -40473,6 +40851,20 @@
       <data key="d32">4.6488</data>
       <data key="d33">23.9</data>
       <data key="d34">23.9</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200018" target="-200017000" id="0">
+      <data key="d28">LINESTRING (126.95363876834797 37.45553659620513, 126.9536349 37.4555509)</data>
+      <data key="d27">1.6240057230939142</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.156693</data>
+      <data key="d30">0.156693</data>
+      <data key="d32">2.6195</data>
+      <data key="d33">2.23</data>
+      <data key="d34">2.23</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-200018" target="-200009" id="0">
@@ -40909,6 +41301,38 @@
       <data key="d34">29.32</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200023" target="-200013" id="0">
+      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200023" target="-200013" id="1">
+      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
+      <data key="d27">0.05</data>
+      <data key="d48">0.0</data>
+      <data key="d49">0.0</data>
+      <data key="d50">level</data>
+      <data key="d51">0.04</data>
+      <data key="d52">0.0</data>
+      <data key="d33">0.1</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_104</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">0.0</data>
+      <data key="d56">0.0</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-200023" target="-200006" id="0">
       <data key="d28">LINESTRING (126.9543718 37.45567, 126.95456 37.4558)</data>
       <data key="d27">22.033</data>
@@ -40925,24 +41349,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-200023" target="-200013" id="0">
-      <data key="d28">LINESTRING (126.9543718 37.45567, 126.9543718 37.45567)</data>
-      <data key="d27">0.05</data>
-      <data key="d48">0.0</data>
-      <data key="d49">0.0</data>
-      <data key="d50">level</data>
-      <data key="d51">0.04</data>
-      <data key="d52">0.0</data>
-      <data key="d33">0.1</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_104</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">0.0</data>
-      <data key="d56">0.0</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-200023" target="-200022" id="0">
@@ -41085,6 +41491,20 @@
     </edge>
     <edge source="-200024" target="-200027" id="0">
       <data key="d28">LINESTRING (126.9510747 37.4562844, 126.9510579 37.456274)</data>
+      <data key="d27">1.8819576691413706</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.041373</data>
+      <data key="d30">0.041373</data>
+      <data key="d32">3.922</data>
+      <data key="d33">1.73</data>
+      <data key="d34">1.73</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200024" target="-200027" id="1">
+      <data key="d28">LINESTRING (126.9510747 37.4562844, 126.9510579 37.456274)</data>
       <data key="d27">1.882</data>
       <data key="d48">0.078</data>
       <data key="d49">0.026</data>
@@ -41209,6 +41629,20 @@
       <data key="d34">25.73</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200025" target="1901811916" id="0">
+      <data key="d28">LINESTRING (126.95145 37.456329, 126.9514553 37.4563204)</data>
+      <data key="d27">1.0634556539410704</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.84</data>
+      <data key="d34">0.84</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-200025000" target="-200025" id="0">
       <data key="d28">LINESTRING (126.9514553 37.4563204, 126.95145143845733 37.45632000744842)</data>
       <data key="d27">0.34442560120650534</data>
@@ -41261,6 +41695,20 @@
       <data key="d31">entrance_connector</data>
       <data key="d41">manual</data>
       <data key="d42">pdf_multimedia_entrances</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.75</data>
+      <data key="d34">0.75</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200026" target="13617883878" id="0">
+      <data key="d28">LINESTRING (126.9514339 37.4564299, 126.9514446 37.4564301)</data>
+      <data key="d27">0.9469660880783405</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
       <data key="d43">True</data>
       <data key="d29">0.0</data>
       <data key="d30">0.0</data>
@@ -41366,6 +41814,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="-200027" target="-200024" id="0">
+      <data key="d28">LINESTRING (126.9510747 37.4562844, 126.9510579 37.456274)</data>
+      <data key="d27">1.8819576691413706</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.041373</data>
+      <data key="d30">0.041373</data>
+      <data key="d32">5.2394</data>
+      <data key="d33">1.29</data>
+      <data key="d34">1.29</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200027" target="-200024" id="1">
       <data key="d28">LINESTRING (126.9510579 37.456274, 126.9510747 37.4562844)</data>
       <data key="d27">1.882</data>
       <data key="d48">0.078</data>
@@ -41493,6 +41955,20 @@
       <data key="d32">4.5331</data>
       <data key="d33">0.73</data>
       <data key="d34">0.73</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200028" target="13617883879" id="0">
+      <data key="d28">LINESTRING (126.9514663 37.4562271, 126.951476 37.4562322)</data>
+      <data key="d27">1.0280821160629199</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.82</data>
+      <data key="d34">0.82</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-200028" target="13617883882" id="0">
@@ -41631,6 +42107,20 @@
       <data key="d32">4.7849</data>
       <data key="d33">19.63</data>
       <data key="d34">19.63</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200030" target="4748062199" id="0">
+      <data key="d28">LINESTRING (126.9521104 37.4505154, 126.9521049 37.4505188)</data>
+      <data key="d27">0.615822146422281</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-4.871536</data>
+      <data key="d30">4.871536</data>
+      <data key="d32">0.0</data>
+      <data key="d33">8754822.06</data>
+      <data key="d34">8754822.06</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-200030000" target="-200030" id="0">
@@ -41779,6 +42269,38 @@
       <data key="d34">0.26</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200032" target="4749980478" id="0">
+      <data key="d28">LINESTRING (126.9522262 37.4501818, 126.9522241 37.4501791)</data>
+      <data key="d27">0.35259961077201546</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.148768</data>
+      <data key="d30">0.148768</data>
+      <data key="d32">3.8218</data>
+      <data key="d33">0.33</data>
+      <data key="d34">0.33</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200032" target="4749980478" id="1">
+      <data key="d28">LINESTRING (126.9522262 37.4501818, 126.9522241 37.4501791)</data>
+      <data key="d27">0.353</data>
+      <data key="d48">0.052</data>
+      <data key="d49">0.017</data>
+      <data key="d50">down</data>
+      <data key="d51">0.29</data>
+      <data key="d52">0.2</data>
+      <data key="d33">0.5</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_124</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-200032" target="4749980473" id="0">
       <data key="d28">LINESTRING (126.9522262 37.4501818, 126.9524317 37.4504835)</data>
       <data key="d27">38.103</data>
@@ -41831,24 +42353,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-200032" target="4749980478" id="0">
-      <data key="d28">LINESTRING (126.9522262 37.4501818, 126.9522241 37.4501791)</data>
-      <data key="d27">0.353</data>
-      <data key="d48">0.052</data>
-      <data key="d49">0.017</data>
-      <data key="d50">down</data>
-      <data key="d51">0.29</data>
-      <data key="d52">0.2</data>
-      <data key="d33">0.5</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_124</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-200032000" target="4749980475000" id="0">
@@ -41923,6 +42427,34 @@
       <data key="d34">55.4</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-200033" target="4295682604" id="0">
+      <data key="d28">LINESTRING (126.9523517 37.4510578, 126.9523614 37.4510671)</data>
+      <data key="d27">1.342403356780579</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.07</data>
+      <data key="d34">1.07</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200033" target="11010688975" id="0">
+      <data key="d28">LINESTRING (126.9523773 37.4510556, 126.9523614 37.4510671)</data>
+      <data key="d27">1.8995762775813927</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.51</data>
+      <data key="d34">1.51</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-200033000" target="-200033" id="0">
       <data key="d28">LINESTRING (126.9523614 37.4510671, 126.95236004560519 37.451057082800176)</data>
       <data key="d27">1.118215030195655</data>
@@ -41993,6 +42525,34 @@
       <data key="d32">3.8952</data>
       <data key="d33">78.62</data>
       <data key="d34">78.62</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200034" target="7257096414" id="0">
+      <data key="d28">LINESTRING (126.9526779 37.4518057, 126.9526785 37.4517907)</data>
+      <data key="d27">1.665644807155937</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.32</data>
+      <data key="d34">1.32</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-200034" target="4631533060" id="0">
+      <data key="d28">LINESTRING (126.9526683 37.4517847, 126.9526785 37.4517907)</data>
+      <data key="d27">1.1216041438578492</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.89</data>
+      <data key="d34">0.89</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-200034000" target="-200034" id="0">
@@ -42403,6 +42963,20 @@
       <data key="d32">3.852</data>
       <data key="d33">28.02</data>
       <data key="d34">28.02</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-300004" target="4562088376000" id="0">
+      <data key="d28">LINESTRING (126.9501599 37.4578859, 126.95014829999998 37.457885399999995)</data>
+      <data key="d27">1.0278151566997762</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.82</data>
+      <data key="d34">0.82</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-300004000" target="-300004" id="0">
@@ -44793,6 +45367,20 @@
       <data key="d34">10.89</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400008" target="4527864813" id="0">
+      <data key="d28">LINESTRING (126.952744 37.46338, 126.9527642 37.4633889)</data>
+      <data key="d27">2.0418967186796513</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.62</data>
+      <data key="d34">1.62</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400008000" target="-400008" id="0">
       <data key="d28">LINESTRING (126.9527642 37.4633889, 126.95276510901157 37.46338169129701)</data>
       <data key="d27">0.8041021749731425</data>
@@ -45203,6 +45791,38 @@
       <data key="d34">0.67</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400011" target="4564809476" id="0">
+      <data key="d28">LINESTRING (126.9520038 37.4623479, 126.952012 37.4623323)</data>
+      <data key="d27">1.8772347782612688</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.010796</data>
+      <data key="d30">0.010796</data>
+      <data key="d32">4.7076</data>
+      <data key="d33">1.44</data>
+      <data key="d34">1.44</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400011" target="4564809476" id="1">
+      <data key="d28">LINESTRING (126.9520038 37.4623479, 126.952012 37.4623323)</data>
+      <data key="d27">1.877</data>
+      <data key="d48">0.02</data>
+      <data key="d49">0.007</data>
+      <data key="d50">down</data>
+      <data key="d51">1.56</data>
+      <data key="d52">0.08</data>
+      <data key="d33">1.64</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_040</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-400011" target="-400009" id="0">
       <data key="d28">LINESTRING (126.9520038 37.4623479, 126.9523447 37.4623725)</data>
       <data key="d27">30.283</data>
@@ -45273,24 +45893,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-400011" target="4564809476" id="0">
-      <data key="d28">LINESTRING (126.9520038 37.4623479, 126.952012 37.4623323)</data>
-      <data key="d27">1.877</data>
-      <data key="d48">0.02</data>
-      <data key="d49">0.007</data>
-      <data key="d50">down</data>
-      <data key="d51">1.56</data>
-      <data key="d52">0.08</data>
-      <data key="d33">1.64</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_040</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-400012" target="-400012000" id="0">
@@ -45393,6 +45995,38 @@
       <data key="d34">1.18</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400013" target="4566528831" id="0">
+      <data key="d28">LINESTRING (126.9543548 37.4619999, 126.9543568 37.4620156)</data>
+      <data key="d27">1.7514514785439543</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.011733</data>
+      <data key="d30">0.011733</data>
+      <data key="d32">4.7231</data>
+      <data key="d33">1.33</data>
+      <data key="d34">1.33</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400013" target="4566528831" id="1">
+      <data key="d28">LINESTRING (126.9543548 37.4619999, 126.9543568 37.4620156)</data>
+      <data key="d27">1.751</data>
+      <data key="d48">0.021</data>
+      <data key="d49">0.007</data>
+      <data key="d50">down</data>
+      <data key="d51">1.46</data>
+      <data key="d52">0.08</data>
+      <data key="d33">1.54</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_042</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-400013" target="4566528829" id="0">
       <data key="d28">LINESTRING (126.9543548 37.4619999, 126.9540041 37.4622251)</data>
       <data key="d27">39.842</data>
@@ -45420,24 +46054,6 @@
       <data key="d51">27.39</data>
       <data key="d52">1.71</data>
       <data key="d33">29.1</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_042</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-400013" target="4566528831" id="0">
-      <data key="d28">LINESTRING (126.9543548 37.4619999, 126.9543568 37.4620156)</data>
-      <data key="d27">1.751</data>
-      <data key="d48">0.021</data>
-      <data key="d49">0.007</data>
-      <data key="d50">down</data>
-      <data key="d51">1.46</data>
-      <data key="d52">0.08</data>
-      <data key="d33">1.54</data>
       <data key="d31">building_internal</data>
       <data key="d41">building_internal</data>
       <data key="d42">snu_building_042</data>
@@ -45595,6 +46211,20 @@
       <data key="d34">7.91</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400015" target="-400016000" id="0">
+      <data key="d28">LINESTRING (126.9516271 37.4620204, 126.95163278323518 37.462012463804975)</data>
+      <data key="d27">1.0142180667429088</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.02387</data>
+      <data key="d30">0.02387</data>
+      <data key="d32">4.928</data>
+      <data key="d33">0.74</data>
+      <data key="d34">0.74</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400015000" target="-400015" id="0">
       <data key="d28">LINESTRING (126.9516271 37.4620204, 126.95163514466935 37.462014514897504)</data>
       <data key="d27">0.9660071910965026</data>
@@ -45745,6 +46375,20 @@
       <data key="d32">2.6801</data>
       <data key="d33">0.42</data>
       <data key="d34">0.42</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400016000" target="-400015" id="0">
+      <data key="d28">LINESTRING (126.9516271 37.4620204, 126.95163278323518 37.462012463804975)</data>
+      <data key="d27">1.0142180667429088</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.02387</data>
+      <data key="d30">0.02387</data>
+      <data key="d32">4.1697</data>
+      <data key="d33">0.88</data>
+      <data key="d34">0.88</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-400017" target="-400017000" id="0">
@@ -45951,6 +46595,20 @@
       <data key="d34">10.55</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400019" target="4564623338" id="0">
+      <data key="d28">LINESTRING (126.9532515 37.4618199, 126.9532747 37.4618162)</data>
+      <data key="d27">2.0931985304525593</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-2.210023</data>
+      <data key="d30">2.210023</data>
+      <data key="d32">0.0028</data>
+      <data key="d33">2679.29</data>
+      <data key="d34">2679.29</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400019" target="-400020" id="0">
       <data key="d28">LINESTRING (126.9532747 37.4618162, 126.9529624 37.4618048)</data>
       <data key="d27">27.658</data>
@@ -46117,6 +46775,34 @@
       <data key="d34">10.59</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400020" target="1793248087" id="0">
+      <data key="d28">LINESTRING (126.9529693 37.4618098, 126.9529624 37.4618048)</data>
+      <data key="d27">0.8249840600657695</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-3.636434</data>
+      <data key="d30">3.636434</data>
+      <data key="d32">0.0</data>
+      <data key="d33">155540.64</data>
+      <data key="d34">155540.64</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400020" target="-400020000" id="0">
+      <data key="d28">LINESTRING (126.9529624 37.4618048, 126.95296129902246 37.46180649210635)</data>
+      <data key="d27">0.21155840292627182</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-14.180481</data>
+      <data key="d30">14.180481</data>
+      <data key="d32">0.0</data>
+      <data key="d33">4.247216333771842e+20</data>
+      <data key="d34">4.247216333771842e+20</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400020" target="-400019" id="0">
       <data key="d28">LINESTRING (126.9529624 37.4618048, 126.9532747 37.4618162)</data>
       <data key="d27">27.658</data>
@@ -46253,6 +46939,20 @@
       <data key="d32">5.0367</data>
       <data key="d33">13.59</data>
       <data key="d34">13.59</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400020000" target="-400020" id="0">
+      <data key="d28">LINESTRING (126.9529624 37.4618048, 126.95296129902246 37.46180649210635)</data>
+      <data key="d27">0.21155840292627182</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">14.180481</data>
+      <data key="d30">14.180481</data>
+      <data key="d32">0.0</data>
+      <data key="d33">6.027086871110901e+20</data>
+      <data key="d34">6.027086871110901e+20</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-400021" target="-400021000" id="0">
@@ -47225,6 +47925,20 @@
       <data key="d34">148.21</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400034" target="4514838235" id="0">
+      <data key="d28">LINESTRING (126.9541033 37.4647151, 126.9541016 37.4646935)</data>
+      <data key="d27">2.402026272687454</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.91</data>
+      <data key="d34">1.91</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400034" target="4563745379" id="0">
       <data key="d28">LINESTRING (126.9541016 37.4646935, 126.9538243 37.464636)</data>
       <data key="d27">25.348</data>
@@ -47351,15 +48065,29 @@
       <data key="d34">0.55</data>
       <data key="d35">6.0</data>
     </edge>
-    <edge source="-400035" target="-400036" id="0">
-      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9522586 37.4601548)</data>
-      <data key="d27">35.332</data>
-      <data key="d48">3.0</data>
-      <data key="d49">1.0</data>
+    <edge source="-400035" target="4564750845" id="0">
+      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9520184 37.4603829)</data>
+      <data key="d27">2.413099215208347</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.015998</data>
+      <data key="d30">0.015998</data>
+      <data key="d32">4.2862</data>
+      <data key="d33">2.03</data>
+      <data key="d34">2.03</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400035" target="4564750845" id="1">
+      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9520184 37.4603829)</data>
+      <data key="d27">2.413</data>
+      <data key="d48">0.039</data>
+      <data key="d49">0.013</data>
       <data key="d50">up</data>
-      <data key="d51">29.44</data>
-      <data key="d52">18.18</data>
-      <data key="d33">47.62</data>
+      <data key="d51">2.01</data>
+      <data key="d52">0.23</data>
+      <data key="d33">2.24</data>
       <data key="d31">building_internal</data>
       <data key="d41">building_internal</data>
       <data key="d42">snu_building_055</data>
@@ -47369,15 +48097,15 @@
       <data key="d56">0.165</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
-    <edge source="-400035" target="4564750845" id="0">
-      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9520184 37.4603829)</data>
-      <data key="d27">2.413</data>
-      <data key="d48">0.039</data>
-      <data key="d49">0.013</data>
+    <edge source="-400035" target="-400036" id="0">
+      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9522586 37.4601548)</data>
+      <data key="d27">35.332</data>
+      <data key="d48">3.0</data>
+      <data key="d49">1.0</data>
       <data key="d50">up</data>
-      <data key="d51">2.01</data>
-      <data key="d52">0.23</data>
-      <data key="d33">2.24</data>
+      <data key="d51">29.44</data>
+      <data key="d52">18.18</data>
+      <data key="d33">47.62</data>
       <data key="d31">building_internal</data>
       <data key="d41">building_internal</data>
       <data key="d42">snu_building_055</data>
@@ -48373,6 +49101,20 @@
       <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
+    <edge source="-400041" target="-400042000" id="0">
+      <data key="d28">LINESTRING (126.9522133 37.4593113, 126.95221380883504 37.45930245347598)</data>
+      <data key="d27">0.9828782206268084</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.012169</data>
+      <data key="d30">0.012169</data>
+      <data key="d32">4.7303</data>
+      <data key="d33">0.75</data>
+      <data key="d34">0.75</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400041" target="-400037" id="0">
       <data key="d28">LINESTRING (126.9522133 37.4593113, 126.9516426 37.4588911)</data>
       <data key="d27">68.734</data>
@@ -48603,6 +49345,20 @@
       <data key="d32">5.3705</data>
       <data key="d33">45.38</data>
       <data key="d34">45.38</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400042000" target="-400041" id="0">
+      <data key="d28">LINESTRING (126.9522133 37.4593113, 126.95221380883504 37.45930245347598)</data>
+      <data key="d27">0.9828782206268084</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.012169</data>
+      <data key="d30">0.012169</data>
+      <data key="d32">4.3441</data>
+      <data key="d33">0.81</data>
+      <data key="d34">0.81</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-400043" target="-400043000" id="0">
@@ -54305,6 +55061,20 @@
       <data key="d34">44.3</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400074" target="1793022854" id="0">
+      <data key="d28">LINESTRING (126.9531359 37.4604459, 126.9531264 37.4604485)</data>
+      <data key="d27">0.8886448070352185</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.71</data>
+      <data key="d34">0.71</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-400074" target="-400038" id="0">
       <data key="d28">LINESTRING (126.9531264 37.4604485, 126.9527761 37.4603032)</data>
       <data key="d27">34.936</data>
@@ -54497,6 +55267,20 @@
       <data key="d32">4.7849</data>
       <data key="d33">0.67</data>
       <data key="d34">0.67</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400074000" target="1793022854" id="0">
+      <data key="d28">LINESTRING (126.9531359 37.4604459, 126.95313594311779 37.460446004788324)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-400075" target="4628154274" id="0">
@@ -54965,6 +55749,38 @@
       <data key="d34">2.59</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400077" target="4564750864" id="0">
+      <data key="d28">LINESTRING (126.9543544 37.4607281, 126.9543388 37.4607101)</data>
+      <data key="d27">2.428146542215688</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.214588</data>
+      <data key="d30">0.214588</data>
+      <data key="d32">3.0354</data>
+      <data key="d33">2.88</data>
+      <data key="d34">2.88</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400077" target="4564750864" id="1">
+      <data key="d28">LINESTRING (126.9543544 37.4607281, 126.9543388 37.4607101)</data>
+      <data key="d27">2.428</data>
+      <data key="d48">0.521</data>
+      <data key="d49">0.174</data>
+      <data key="d50">down</data>
+      <data key="d51">2.02</data>
+      <data key="d52">2.0</data>
+      <data key="d33">4.03</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_049</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-400077" target="4564750863" id="0">
       <data key="d28">LINESTRING (126.9543544 37.4607281, 126.9543 37.4608527)</data>
       <data key="d27">14.643</data>
@@ -54981,24 +55797,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-400077" target="4564750864" id="0">
-      <data key="d28">LINESTRING (126.9543544 37.4607281, 126.9543388 37.4607101)</data>
-      <data key="d27">2.428</data>
-      <data key="d48">0.521</data>
-      <data key="d49">0.174</data>
-      <data key="d50">down</data>
-      <data key="d51">2.02</data>
-      <data key="d52">2.0</data>
-      <data key="d33">4.03</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_049</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-400077" target="4564750865" id="0">
@@ -56303,6 +57101,38 @@
       <data key="d34">37.76</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400083" target="4564750867" id="0">
+      <data key="d28">LINESTRING (126.9544941 37.4605641, 126.9544738 37.4605778)</data>
+      <data key="d27">2.3531970397484145</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.372416</data>
+      <data key="d30">0.372416</data>
+      <data key="d32">1.2311</data>
+      <data key="d33">6.88</data>
+      <data key="d34">6.88</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400083" target="4564750867" id="1">
+      <data key="d28">LINESTRING (126.9544941 37.4605641, 126.9544738 37.4605778)</data>
+      <data key="d27">2.353</data>
+      <data key="d48">0.876</data>
+      <data key="d49">0.292</data>
+      <data key="d50">up</data>
+      <data key="d51">1.96</data>
+      <data key="d52">5.31</data>
+      <data key="d33">7.27</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_056</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">18.18</data>
+      <data key="d56">0.165</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-400083" target="4564750866" id="0">
       <data key="d28">LINESTRING (126.9544941 37.4605641, 126.9546959 37.4605183)</data>
       <data key="d27">18.563</data>
@@ -56319,24 +57149,6 @@
       <data key="d54">1.2</data>
       <data key="d55">0.0</data>
       <data key="d56">0.0</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-400083" target="4564750867" id="0">
-      <data key="d28">LINESTRING (126.9544941 37.4605641, 126.9544738 37.4605778)</data>
-      <data key="d27">2.353</data>
-      <data key="d48">0.876</data>
-      <data key="d49">0.292</data>
-      <data key="d50">up</data>
-      <data key="d51">1.96</data>
-      <data key="d52">5.31</data>
-      <data key="d33">7.27</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_056</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">18.18</data>
-      <data key="d56">0.165</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-400083" target="4564750870" id="0">
@@ -59009,6 +59821,20 @@
     </edge>
     <edge source="-400094" target="4564750882" id="0">
       <data key="d28">LINESTRING (126.9553679 37.4600939, 126.9553466 37.4600793)</data>
+      <data key="d27">2.485343993520281</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.020926</data>
+      <data key="d30">0.020926</data>
+      <data key="d32">4.8775</data>
+      <data key="d33">1.83</data>
+      <data key="d34">1.83</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400094" target="4564750882" id="1">
+      <data key="d28">LINESTRING (126.9553679 37.4600939, 126.9553466 37.4600793)</data>
       <data key="d27">2.485</data>
       <data key="d48">0.052</data>
       <data key="d49">0.017</data>
@@ -59335,6 +60161,38 @@
       <data key="d34">1.43</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-400096" target="4564750881" id="0">
+      <data key="d28">LINESTRING (126.9552419 37.4602579, 126.955226 37.4602402)</data>
+      <data key="d27">2.416186576433295</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.047782</data>
+      <data key="d30">0.047782</data>
+      <data key="d32">5.3582</data>
+      <data key="d33">1.62</data>
+      <data key="d34">1.62</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-400096" target="4564750881" id="1">
+      <data key="d28">LINESTRING (126.9552419 37.4602579, 126.955226 37.4602402)</data>
+      <data key="d27">2.416</data>
+      <data key="d48">0.115</data>
+      <data key="d49">0.038</data>
+      <data key="d50">down</data>
+      <data key="d51">2.01</data>
+      <data key="d52">0.44</data>
+      <data key="d33">2.46</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_054</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="-400096" target="4564750880" id="0">
       <data key="d28">LINESTRING (126.9552419 37.4602579, 126.9551612 37.4603853)</data>
       <data key="d27">15.84</data>
@@ -59351,24 +60209,6 @@
       <data key="d54">1.2</data>
       <data key="d55">0.0</data>
       <data key="d56">0.0</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="-400096" target="4564750881" id="0">
-      <data key="d28">LINESTRING (126.9552419 37.4602579, 126.955226 37.4602402)</data>
-      <data key="d27">2.416</data>
-      <data key="d48">0.115</data>
-      <data key="d49">0.038</data>
-      <data key="d50">down</data>
-      <data key="d51">2.01</data>
-      <data key="d52">0.44</data>
-      <data key="d33">2.46</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_054</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="-400096" target="4564750883" id="0">
@@ -63755,6 +64595,20 @@
       <data key="d34">5.98</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4562088376000" target="-300004" id="0">
+      <data key="d28">LINESTRING (126.9501599 37.4578859, 126.95014829999998 37.457885399999995)</data>
+      <data key="d27">1.0278151566997762</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.82</data>
+      <data key="d34">0.82</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4562088378" target="4562088378000" id="0">
       <data key="d28">LINESTRING (126.9498455 37.4577045, 126.95001697424733 37.45764092441634)</data>
       <data key="d27">16.731906440429285</data>
@@ -65019,6 +65873,20 @@
       <data key="d32">4.5331</data>
       <data key="d33">1.78</data>
       <data key="d34">1.78</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4562091891" target="2548591999" id="0">
+      <data key="d28">LINESTRING (126.9513413 37.4579373, 126.9513625 37.457925)</data>
+      <data key="d27">2.3198641904658057</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">1.84</data>
+      <data key="d34">1.84</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4562091891" target="4562091892" id="0">
@@ -68503,6 +69371,20 @@
       <data key="d34">0.04</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4563745371000" target="4563745372000" id="0">
+      <data key="d28">LINESTRING (126.95372030000001 37.46487239999999, 126.95372030000001 37.46487239999999)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4563745372" target="4563745372000" id="0">
       <data key="d28">LINESTRING (126.9536353 37.4649523, 126.95372030000001 37.46487239999999)</data>
       <data key="d27">11.626889793452348</data>
@@ -68605,6 +69487,20 @@
       <data key="d31">entrance_connector</data>
       <data key="d41">manual</data>
       <data key="d42">osm_entrances</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.5331</data>
+      <data key="d33">0.04</data>
+      <data key="d34">0.04</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4563745372000" target="4563745371000" id="0">
+      <data key="d28">LINESTRING (126.95372030000001 37.46487239999999, 126.95372030000001 37.46487239999999)</data>
+      <data key="d27">0.05</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
       <data key="d43">True</data>
       <data key="d29">0.0</data>
       <data key="d30">0.0</data>
@@ -71071,6 +71967,20 @@
       <data key="d34">1.13</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564623354" target="4564623355000" id="0">
+      <data key="d28">LINESTRING (126.9530742 37.4624092, 126.95305616298882 37.46240400471637)</data>
+      <data key="d27">1.6967172019607315</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.01075</data>
+      <data key="d30">0.01075</data>
+      <data key="d32">4.7069</data>
+      <data key="d33">1.3</data>
+      <data key="d34">1.3</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4564623354" target="-400051" id="0">
       <data key="d28">LINESTRING (126.9530742 37.4624092, 126.9527643 37.4626603)</data>
       <data key="d27">39.094</data>
@@ -71225,6 +72135,20 @@
       <data key="d34">0.6</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564623354000" target="4564623355" id="0">
+      <data key="d28">LINESTRING (126.95305844674625 37.462411920026945, 126.9530434 37.4624065)</data>
+      <data key="d27">1.4607950413759203</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.012486</data>
+      <data key="d30">0.012486</data>
+      <data key="d32">4.7356</data>
+      <data key="d33">1.11</data>
+      <data key="d34">1.11</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4564623355" target="4564623355000" id="0">
       <data key="d28">LINESTRING (126.9530434 37.4624065, 126.95305616298882 37.46240400471637)</data>
       <data key="d27">1.1626095116805837</data>
@@ -71237,6 +72161,20 @@
       <data key="d32">4.5331</data>
       <data key="d33">0.92</data>
       <data key="d34">0.92</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564623355" target="4564623354000" id="0">
+      <data key="d28">LINESTRING (126.95305844674625 37.462411920026945, 126.9530434 37.4624065)</data>
+      <data key="d27">1.4607950413759203</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.012486</data>
+      <data key="d30">0.012486</data>
+      <data key="d32">4.3392</data>
+      <data key="d33">1.21</data>
+      <data key="d34">1.21</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4564623355" target="-400051" id="0">
@@ -71391,6 +72329,20 @@
       <data key="d32">5.4063</data>
       <data key="d33">18.95</data>
       <data key="d34">18.95</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564623355000" target="4564623354" id="0">
+      <data key="d28">LINESTRING (126.9530742 37.4624092, 126.95305616298882 37.46240400471637)</data>
+      <data key="d27">1.6967172019607315</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.01075</data>
+      <data key="d30">0.01075</data>
+      <data key="d32">4.3657</data>
+      <data key="d33">1.4</data>
+      <data key="d34">1.4</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4564623356" target="4564623356000" id="0">
@@ -72826,6 +73778,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="4564750845" target="-400035" id="0">
+      <data key="d28">LINESTRING (126.9519948 37.4603938, 126.9520184 37.4603829)</data>
+      <data key="d27">2.413099215208347</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.015998</data>
+      <data key="d30">0.015998</data>
+      <data key="d32">4.7941</data>
+      <data key="d33">1.81</data>
+      <data key="d34">1.81</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564750845" target="-400035" id="1">
       <data key="d28">LINESTRING (126.9520184 37.4603829, 126.9519948 37.4603938)</data>
       <data key="d27">2.413</data>
       <data key="d48">0.039</data>
@@ -76324,6 +77290,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="4564750864" target="-400077" id="0">
+      <data key="d28">LINESTRING (126.9543544 37.4607281, 126.9543388 37.4607101)</data>
+      <data key="d27">2.428146542215688</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.214588</data>
+      <data key="d30">0.214588</data>
+      <data key="d32">2.139</data>
+      <data key="d33">4.09</data>
+      <data key="d34">4.09</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564750864" target="-400077" id="1">
       <data key="d28">LINESTRING (126.9543388 37.4607101, 126.9543544 37.4607281)</data>
       <data key="d27">2.428</data>
       <data key="d48">0.521</data>
@@ -76693,6 +77673,38 @@
       <data key="d34">0.07</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564750867" target="-400083" id="0">
+      <data key="d28">LINESTRING (126.9544941 37.4605641, 126.9544738 37.4605778)</data>
+      <data key="d27">2.3531970397484145</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.372416</data>
+      <data key="d30">0.372416</data>
+      <data key="d32">1.7471</data>
+      <data key="d33">4.85</data>
+      <data key="d34">4.85</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564750867" target="-400083" id="1">
+      <data key="d28">LINESTRING (126.9544738 37.4605778, 126.9544941 37.4605641)</data>
+      <data key="d27">2.353</data>
+      <data key="d48">0.876</data>
+      <data key="d49">0.292</data>
+      <data key="d50">down</data>
+      <data key="d51">1.96</data>
+      <data key="d52">3.37</data>
+      <data key="d33">5.33</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_056</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">11.54</data>
+      <data key="d56">0.26</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="4564750867" target="-400082" id="0">
       <data key="d28">LINESTRING (126.9544738 37.4605778, 126.9542068 37.4602298)</data>
       <data key="d27">45.274</data>
@@ -76709,24 +77721,6 @@
       <data key="d54">1.2</data>
       <data key="d55">18.18</data>
       <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="4564750867" target="-400083" id="0">
-      <data key="d28">LINESTRING (126.9544738 37.4605778, 126.9544941 37.4605641)</data>
-      <data key="d27">2.353</data>
-      <data key="d48">0.876</data>
-      <data key="d49">0.292</data>
-      <data key="d50">down</data>
-      <data key="d51">1.96</data>
-      <data key="d52">3.37</data>
-      <data key="d33">5.33</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_056</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">11.54</data>
-      <data key="d56">0.26</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="4564750867" target="4564750866" id="0">
@@ -78002,6 +78996,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="4564750881" target="-400096" id="0">
+      <data key="d28">LINESTRING (126.9552419 37.4602579, 126.955226 37.4602402)</data>
+      <data key="d27">2.416186576433295</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.047782</data>
+      <data key="d30">0.047782</data>
+      <data key="d32">3.835</data>
+      <data key="d33">2.27</data>
+      <data key="d34">2.27</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564750881" target="-400096" id="1">
       <data key="d28">LINESTRING (126.955226 37.4602402, 126.9552419 37.4602579)</data>
       <data key="d27">2.416</data>
       <data key="d48">0.115</data>
@@ -78129,6 +79137,38 @@
       <data key="d34">0.34</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564750882" target="-400094" id="0">
+      <data key="d28">LINESTRING (126.9553679 37.4600939, 126.9553466 37.4600793)</data>
+      <data key="d27">2.485343993520281</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.020926</data>
+      <data key="d30">0.020926</data>
+      <data key="d32">4.2129</data>
+      <data key="d33">2.12</data>
+      <data key="d34">2.12</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564750882" target="-400094" id="1">
+      <data key="d28">LINESTRING (126.9553466 37.4600793, 126.9553679 37.4600939)</data>
+      <data key="d27">2.485</data>
+      <data key="d48">0.052</data>
+      <data key="d49">0.017</data>
+      <data key="d50">up</data>
+      <data key="d51">2.07</data>
+      <data key="d52">0.32</data>
+      <data key="d33">2.39</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_063</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">18.18</data>
+      <data key="d56">0.165</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="4564750882" target="-400093" id="0">
       <data key="d28">LINESTRING (126.9553466 37.4600793, 126.9550589 37.4597471)</data>
       <data key="d27">44.803</data>
@@ -78145,24 +79185,6 @@
       <data key="d54">1.2</data>
       <data key="d55">11.54</data>
       <data key="d56">0.26</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="4564750882" target="-400094" id="0">
-      <data key="d28">LINESTRING (126.9553466 37.4600793, 126.9553679 37.4600939)</data>
-      <data key="d27">2.485</data>
-      <data key="d48">0.052</data>
-      <data key="d49">0.017</data>
-      <data key="d50">up</data>
-      <data key="d51">2.07</data>
-      <data key="d52">0.32</data>
-      <data key="d33">2.39</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_063</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">18.18</data>
-      <data key="d56">0.165</data>
       <data key="d57">measured_data\계단_측정.csv</data>
     </edge>
     <edge source="4564750882" target="-400095" id="0">
@@ -82563,6 +83585,38 @@
       <data key="d34">1.28</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564809476" target="-400011" id="0">
+      <data key="d28">LINESTRING (126.9520038 37.4623479, 126.952012 37.4623323)</data>
+      <data key="d27">1.8772347782612688</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.010796</data>
+      <data key="d30">0.010796</data>
+      <data key="d32">4.365</data>
+      <data key="d33">1.55</data>
+      <data key="d34">1.55</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4564809476" target="-400011" id="1">
+      <data key="d28">LINESTRING (126.952012 37.4623323, 126.9520038 37.4623479)</data>
+      <data key="d27">1.877</data>
+      <data key="d48">0.02</data>
+      <data key="d49">0.007</data>
+      <data key="d50">up</data>
+      <data key="d51">1.56</data>
+      <data key="d52">0.12</data>
+      <data key="d33">1.69</data>
+      <data key="d31">building_internal</data>
+      <data key="d41">building_internal</data>
+      <data key="d42">snu_building_040</data>
+      <data key="d53">true</data>
+      <data key="d54">1.2</data>
+      <data key="d55">18.18</data>
+      <data key="d56">0.165</data>
+      <data key="d57">measured_data\계단_측정.csv</data>
+    </edge>
     <edge source="4564809476" target="-400009" id="0">
       <data key="d28">LINESTRING (126.952012 37.4623323, 126.9523447 37.4623725)</data>
       <data key="d27">29.77</data>
@@ -82590,24 +83644,6 @@
       <data key="d51">29.24</data>
       <data key="d52">39.74</data>
       <data key="d33">68.98</data>
-      <data key="d31">building_internal</data>
-      <data key="d41">building_internal</data>
-      <data key="d42">snu_building_040</data>
-      <data key="d53">true</data>
-      <data key="d54">1.2</data>
-      <data key="d55">18.18</data>
-      <data key="d56">0.165</data>
-      <data key="d57">measured_data\계단_측정.csv</data>
-    </edge>
-    <edge source="4564809476" target="-400011" id="0">
-      <data key="d28">LINESTRING (126.952012 37.4623323, 126.9520038 37.4623479)</data>
-      <data key="d27">1.877</data>
-      <data key="d48">0.02</data>
-      <data key="d49">0.007</data>
-      <data key="d50">up</data>
-      <data key="d51">1.56</data>
-      <data key="d52">0.12</data>
-      <data key="d33">1.69</data>
       <data key="d31">building_internal</data>
       <data key="d41">building_internal</data>
       <data key="d42">snu_building_040</data>
@@ -86231,6 +87267,20 @@
       <data key="d34">1.25</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="4564999933000" target="-500006" id="0">
+      <data key="d28">LINESTRING (126.95026278852481 37.453543171221426, 126.950220492609 37.4535571226189)</data>
+      <data key="d27">4.050052972609194</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">3.05</data>
+      <data key="d34">3.05</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="4566528829" target="4566528829000" id="0">
       <data key="d28">LINESTRING (126.9540041 37.4622251, 126.9537832 37.46211859999999)</data>
       <data key="d27">22.839592147766282</data>
@@ -86470,6 +87520,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="4566528831" target="-400013" id="0">
+      <data key="d28">LINESTRING (126.9543548 37.4619999, 126.9543568 37.4620156)</data>
+      <data key="d27">1.7514514785439543</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.011733</data>
+      <data key="d30">0.011733</data>
+      <data key="d32">4.3507</data>
+      <data key="d33">1.45</data>
+      <data key="d34">1.45</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4566528831" target="-400013" id="1">
       <data key="d28">LINESTRING (126.9543568 37.4620156, 126.9543548 37.4619999)</data>
       <data key="d27">1.751</data>
       <data key="d48">0.021</data>
@@ -88078,6 +89142,20 @@
       <data key="d35">6.0</data>
     </edge>
     <edge source="4749980478" target="-200032" id="0">
+      <data key="d28">LINESTRING (126.9522262 37.4501818, 126.9522241 37.4501791)</data>
+      <data key="d27">0.35259961077201546</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.148768</data>
+      <data key="d30">0.148768</data>
+      <data key="d32">2.6931</data>
+      <data key="d33">0.47</data>
+      <data key="d34">0.47</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4749980478" target="-200032" id="1">
       <data key="d28">LINESTRING (126.9522241 37.4501791, 126.9522262 37.4501818)</data>
       <data key="d27">0.353</data>
       <data key="d48">0.052</data>
@@ -88477,6 +89555,20 @@
       <data key="d32">1.4626</data>
       <data key="d33">67.45</data>
       <data key="d34">67.45</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="4752485021000" target="3902467478" id="0">
+      <data key="d28">LINESTRING (126.9541923 37.4635571, 126.95421253488243 37.46356307402048)</data>
+      <data key="d27">1.9089963477050422</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.30229</data>
+      <data key="d30">0.30229</data>
+      <data key="d32">1.5736</data>
+      <data key="d33">4.37</data>
+      <data key="d34">4.37</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="4752760187" target="4752760187000" id="0">
@@ -89519,6 +90611,20 @@
       <data key="d34">2.39</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-500006" target="4564999933000" id="0">
+      <data key="d28">LINESTRING (126.95026278852481 37.453543171221426, 126.950220492609 37.4535571226189)</data>
+      <data key="d27">4.050052972609194</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">3.05</data>
+      <data key="d34">3.05</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-500006" target="-510006" id="0">
       <data key="d28">LINESTRING (126.950220492609 37.4535571226189, 126.950220492609 37.4535571226189)</data>
       <data key="d27">0.0</data>
@@ -89657,6 +90763,20 @@
       <data key="d34">1.33</data>
       <data key="d35">6.0</data>
     </edge>
+    <edge source="-500008" target="1790475141" id="0">
+      <data key="d28">LINESTRING (126.9519484 37.4499444, 126.951849 37.449935)</data>
+      <data key="d27">8.85704961287912</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">6.66</data>
+      <data key="d34">6.66</data>
+      <data key="d35">6.0</data>
+    </edge>
     <edge source="-500008" target="-510008" id="0">
       <data key="d28">LINESTRING (126.951849 37.449935, 126.951849 37.449935)</data>
       <data key="d27">0.0</data>
@@ -89791,6 +90911,20 @@
       <data key="d32">0.5346</data>
       <data key="d33">12.78</data>
       <data key="d34">12.78</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-500010" target="1790402716" id="0">
+      <data key="d28">LINESTRING (126.9552076 37.4559106, 126.955245592118 37.455989614862)</data>
+      <data key="d27">9.391751038470359</data>
+      <data key="d31">shuttle_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">0.0</data>
+      <data key="d30">0.0</data>
+      <data key="d32">4.7849</data>
+      <data key="d33">7.07</data>
+      <data key="d34">7.07</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-500010" target="-510010" id="0">
@@ -90217,6 +91351,20 @@
       <data key="d32">3.0523</data>
       <data key="d33">16.83</data>
       <data key="d34">16.83</data>
+      <data key="d35">6.0</data>
+    </edge>
+    <edge source="-700042" target="1793027047" id="0">
+      <data key="d28">LINESTRING (126.9532616 37.4604106, 126.95328085032209 37.46042130385084)</data>
+      <data key="d27">2.076519948076914</data>
+      <data key="d31">entrance_connector</data>
+      <data key="d41">manual</data>
+      <data key="d42">auto_near_node_stitch</data>
+      <data key="d43">True</data>
+      <data key="d29">-0.970288</data>
+      <data key="d30">0.970288</data>
+      <data key="d32">0.2155</data>
+      <data key="d33">34.68</data>
+      <data key="d34">34.68</data>
       <data key="d35">6.0</data>
     </edge>
     <edge source="-700092" target="4564999895" id="0">

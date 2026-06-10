@@ -46,6 +46,7 @@ const elements = {
   ascentValue: document.getElementById("ascentValue"),
   descentValue: document.getElementById("descentValue"),
   snapWarning: document.getElementById("snapWarning"),
+  shuttleNotice: document.getElementById("shuttleNotice"),
 };
 
 const startIcon = pointIcon("start");
@@ -312,6 +313,8 @@ function clearRoute() {
     state.routeLayer = null;
   }
   elements.summaryPanel.hidden = true;
+  elements.shuttleNotice.hidden = true;
+  elements.shuttleNotice.textContent = "";
 }
 
 function renderSummary(summary) {
@@ -329,6 +332,16 @@ function renderSummary(summary) {
   } else {
     elements.snapWarning.hidden = true;
     elements.snapWarning.textContent = "";
+  }
+
+  if (summary.uses_shuttle) {
+    const waitMin = (summary.shuttle_wait_time_sec / 60).toFixed(1);
+    const rideMin = ((summary.shuttle_ride_time_sec + summary.shuttle_dwell_time_sec) / 60).toFixed(1);
+    elements.shuttleNotice.hidden = false;
+    elements.shuttleNotice.textContent = `셔틀 탑승 필요 · 대기 ${waitMin}분 / 탑승 ${rideMin}분`;
+  } else {
+    elements.shuttleNotice.hidden = true;
+    elements.shuttleNotice.textContent = "";
   }
 
 }

@@ -239,6 +239,16 @@ button.primary:hover {
   color: #92400e;
 }
 
+.summary .shuttle-notice {
+  grid-column: 1 / -1;
+  padding: 9px 10px;
+  border: 1px solid #6d28d9;
+  border-radius: 6px;
+  background: #f5f3ff;
+  color: #4c1d95;
+  font-weight: 750;
+}
+
 .layers {
   display: grid;
   gap: 8px;

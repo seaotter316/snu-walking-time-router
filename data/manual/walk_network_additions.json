@@ -4,11 +4,438 @@
       "id": "lawn_plaza",
       "name": "서울대 잔디광장",
       "polygon_lon_lat": [
-        [126.9499099, 37.4604256],
-        [126.9506876, 37.4610799],
-        [126.9511786, 37.4606035],
-        [126.9504057, 37.4600441],
-        [126.9499099, 37.4604256]
+        [
+          126.9499099,
+          37.4604256
+        ],
+        [
+          126.9506876,
+          37.4610799
+        ],
+        [
+          126.9511786,
+          37.4606035
+        ],
+        [
+          126.9504057,
+          37.4600441
+        ],
+        [
+          126.9499099,
+          37.4604256
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pharmacy_plaza",
+      "name": "????-?????? ?? ??",
+      "polygon_lon_lat": [
+        [
+          126.95375,
+          37.45636
+        ],
+        [
+          126.95416,
+          37.45642
+        ],
+        [
+          126.95452,
+          37.45642
+        ],
+        [
+          126.9547,
+          37.45626
+        ],
+        [
+          126.95473,
+          37.45608
+        ],
+        [
+          126.95456,
+          37.4558
+        ],
+        [
+          126.9543,
+          37.45564
+        ],
+        [
+          126.95408,
+          37.4556
+        ],
+        [
+          126.9539,
+          37.45565
+        ],
+        [
+          126.95384,
+          37.45583
+        ],
+        [
+          126.95375,
+          37.45636
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pdf2_natural_sciences_plaza",
+      "name": "PDF2 natural sciences plaza",
+      "polygon_lon_lat": [
+        [
+          126.9505257,
+          37.4584958
+        ],
+        [
+          126.9502441,
+          37.457937
+        ],
+        [
+          126.9506422,
+          37.457792
+        ],
+        [
+          126.9509503,
+          37.4583665
+        ],
+        [
+          126.9505257,
+          37.4584958
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02",
+      "polygon_lon_lat": [
+        [
+          126.9539206,
+          37.4636294
+        ],
+        [
+          126.9539635,
+          37.4635045
+        ],
+        [
+          126.9538848,
+          37.4633985
+        ],
+        [
+          126.9541853,
+          37.4633171
+        ],
+        [
+          126.9542138,
+          37.4635745
+        ],
+        [
+          126.9539206,
+          37.4636294
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05",
+      "polygon_lon_lat": [
+        [
+          126.9528453,
+          37.462876
+        ],
+        [
+          126.9527643,
+          37.4626603
+        ],
+        [
+          126.9528668,
+          37.4626016
+        ],
+        [
+          126.9528573,
+          37.4625051
+        ],
+        [
+          126.9530815,
+          37.4625108
+        ],
+        [
+          126.9532412,
+          37.4627644
+        ],
+        [
+          126.9528453,
+          37.462876
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06",
+      "polygon_lon_lat": [
+        [
+          126.9516107,
+          37.4671488
+        ],
+        [
+          126.9517424,
+          37.466659
+        ],
+        [
+          126.9518026,
+          37.4667486
+        ],
+        [
+          126.9520698,
+          37.4667844
+        ],
+        [
+          126.9521337,
+          37.466653
+        ],
+        [
+          126.9519644,
+          37.4672503
+        ],
+        [
+          126.9516107,
+          37.4671488
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09",
+      "polygon_lon_lat": [
+        [
+          126.9519869,
+          37.4656255
+        ],
+        [
+          126.9520282,
+          37.4650312
+        ],
+        [
+          126.9519116,
+          37.4649595
+        ],
+        [
+          126.9527093,
+          37.46507
+        ],
+        [
+          126.9525588,
+          37.4651387
+        ],
+        [
+          126.9525626,
+          37.4654971
+        ],
+        [
+          126.9520998,
+          37.4654851
+        ],
+        [
+          126.9519869,
+          37.4656255
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06",
+      "polygon_lon_lat": [
+        [
+          126.9525734,
+          37.4608703
+        ],
+        [
+          126.952536,
+          37.4606672
+        ],
+        [
+          126.9526915,
+          37.4606094
+        ],
+        [
+          126.9526207,
+          37.4604469
+        ],
+        [
+          126.9527033,
+          37.460586
+        ],
+        [
+          126.9531264,
+          37.4604485
+        ],
+        [
+          126.9533173,
+          37.4608047
+        ],
+        [
+          126.9527879,
+          37.4609374
+        ],
+        [
+          126.9525734,
+          37.4608703
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09",
+      "polygon_lon_lat": [
+        [
+          126.9543544,
+          37.4607281
+        ],
+        [
+          126.9541773,
+          37.4607625
+        ],
+        [
+          126.9539884,
+          37.4603985
+        ],
+        [
+          126.9538782,
+          37.4604095
+        ],
+        [
+          126.9540789,
+          37.4602001
+        ],
+        [
+          126.9542068,
+          37.4602298
+        ],
+        [
+          126.9544941,
+          37.4605641
+        ],
+        [
+          126.9543544,
+          37.4607281
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15",
+      "polygon_lon_lat": [
+        [
+          126.9534491,
+          37.4603985
+        ],
+        [
+          126.953335,
+          37.4602892
+        ],
+        [
+          126.9532268,
+          37.4602782
+        ],
+        [
+          126.9533094,
+          37.460272
+        ],
+        [
+          126.9535594,
+          37.4599971
+        ],
+        [
+          126.9537798,
+          37.4602189
+        ],
+        [
+          126.9536676,
+          37.4603845
+        ],
+        [
+          126.9534491,
+          37.4603985
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17",
+      "polygon_lon_lat": [
+        [
+          126.9550294,
+          37.4602954
+        ],
+        [
+          126.9547342,
+          37.4598783
+        ],
+        [
+          126.9550589,
+          37.4597471
+        ],
+        [
+          126.9553679,
+          37.4600939
+        ],
+        [
+          126.9552931,
+          37.4601002
+        ],
+        [
+          126.9552419,
+          37.4602579
+        ],
+        [
+          126.9550294,
+          37.4602954
+        ]
+      ],
+      "fully_connected": true,
+      "walk_type": "plaza_crossing"
+    },
+    {
+      "id": "pptx_business_p4_plaza_07",
+      "name": "PPTX business page 4 plaza 07",
+      "polygon_lon_lat": [
+        [
+          126.9576449,
+          37.4615302
+        ],
+        [
+          126.9572695,
+          37.4614054
+        ],
+        [
+          126.9574582,
+          37.4610657
+        ],
+        [
+          126.9578389,
+          37.4611781
+        ],
+        [
+          126.9576449,
+          37.4615302
+        ]
       ],
       "fully_connected": true,
       "walk_type": "plaza_crossing"
@@ -94,7 +521,2271 @@
       "elevation_m": 87.0,
       "connect_to_network": true,
       "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200001,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 1",
+      "x": 126.95375,
+      "y": 37.45636,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200002,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 2",
+      "x": 126.95416,
+      "y": 37.45642,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200003,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 3",
+      "x": 126.95452,
+      "y": 37.45642,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200004,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 4",
+      "x": 126.9547,
+      "y": 37.45626,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200005,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 5",
+      "x": 126.95473,
+      "y": 37.45608,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200006,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 6",
+      "x": 126.95456,
+      "y": 37.4558,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200007,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 7",
+      "x": 126.9543,
+      "y": 37.45564,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200008,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 8",
+      "x": 126.95408,
+      "y": 37.4556,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200009,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 9",
+      "x": 126.9539,
+      "y": 37.45565,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200010,
+      "feature_id": "pharmacy_plaza",
+      "name": "PDF 6 ?? ??? 10",
+      "x": 126.95384,
+      "y": 37.45583,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200011,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?? ?? ?? ??",
+      "x": 126.9533625,
+      "y": 37.4563596,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200012,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?? ?? ?? ?",
+      "x": 126.9538199,
+      "y": 37.4563449,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200013,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?????? ?? ?? ??",
+      "x": 126.9543718,
+      "y": 37.45567,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200014,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?????? ?? ?? ?",
+      "x": 126.954642,
+      "y": 37.455393,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200015,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?? ?? ?? ??",
+      "x": 126.9538683,
+      "y": 37.4557746,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200016,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ?? ?? ?? ?",
+      "x": 126.9535518,
+      "y": 37.4557618,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200017,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ????????? ?? ?? ??",
+      "x": 126.9539768,
+      "y": 37.4556059,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200018,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "name": "PDF 6 ????????? ?? ?? ?",
+      "x": 126.9536349,
+      "y": 37.4555509,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -200019,
+      "feature_id": "pdf_entrances",
+      "name": "PDF 6 ?? ?? ?? 1",
+      "x": 126.9536505,
+      "y": 37.4567307,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200020,
+      "feature_id": "pdf_entrances",
+      "name": "PDF 6 ?? ?? ?? 2",
+      "x": 126.9536386,
+      "y": 37.4559276,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200021,
+      "feature_id": "pdf_entrances",
+      "name": "PDF 6 ?? ?? ?? 3",
+      "x": 126.9541929,
+      "y": 37.4560549,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200022,
+      "feature_id": "pdf_entrances",
+      "name": "PDF 6 ?? ?? ?? 4",
+      "x": 126.9546421,
+      "y": 37.4558578,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200023,
+      "feature_id": "pdf_entrances",
+      "name": "PDF 6 ?? ?? ?? 5",
+      "x": 126.9543718,
+      "y": 37.45567,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200024,
+      "feature_id": "pdf_multimedia",
+      "name": "PDF 5 ???? ?? ???",
+      "x": 126.9510747,
+      "y": 37.4562844,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -200025,
+      "feature_id": "pdf_multimedia",
+      "name": "PDF 5 ???????? ???",
+      "x": 126.9514553,
+      "y": 37.4563204,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -200026,
+      "feature_id": "pdf_multimedia_entrances",
+      "name": "PDF 5 ?? ?? ?? 1",
+      "x": 126.9514446,
+      "y": 37.4564301,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200027,
+      "feature_id": "pdf_multimedia_entrances",
+      "name": "PDF 5 ?? ?? ?? 2",
+      "x": 126.9510579,
+      "y": 37.456274,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200028,
+      "feature_id": "pdf_multimedia_entrances",
+      "name": "PDF 5 ?? ?? ?? 3",
+      "x": 126.951476,
+      "y": 37.4562322,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "entrance_connector"
+    },
+    {
+      "id": -200029,
+      "feature_id": "pdf_300_301",
+      "name": "PDF 2 2? ?? ?? 1",
+      "x": 126.9529102,
+      "y": 37.4507384,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -200030,
+      "feature_id": "pdf_300_301",
+      "name": "PDF 2 2? ?? ? 1",
+      "x": 126.9521049,
+      "y": 37.4505188,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -200031,
+      "feature_id": "pdf_300_301",
+      "name": "PDF 2 2? ?? ?? 2",
+      "x": 126.9518526,
+      "y": 37.4501875,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -200032,
+      "feature_id": "pdf_300_301",
+      "name": "PDF 2 2? ?? ? 2",
+      "x": 126.9522262,
+      "y": 37.4501818,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -200033,
+      "feature_id": "pdf_car_center",
+      "name": "PDF 3-4 ???????????? ?? ?? 1",
+      "x": 126.9523614,
+      "y": 37.4510671,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -200034,
+      "feature_id": "pdf_car_center",
+      "name": "PDF 3-4 ???????????? ?? ? 1",
+      "x": 126.9526785,
+      "y": 37.4517907,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -200035,
+      "feature_id": "pdf_car_center",
+      "name": "PDF 3-4 ???????????? ?? ?? 2",
+      "x": 126.9523288,
+      "y": 37.4521898,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -200036,
+      "feature_id": "pdf_car_center",
+      "name": "PDF 3-4 ???????????? ?? ? 2",
+      "x": 126.9529075,
+      "y": 37.4529348,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -300001,
+      "feature_id": "pdf2_page1_shortcuts",
+      "name": "PDF2 page 1 west shortcut west road",
+      "x": 126.9489983,
+      "y": 37.4580992,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300002,
+      "feature_id": "pdf2_page1_shortcuts",
+      "name": "PDF2 page 1 west shortcut north road",
+      "x": 126.9492316,
+      "y": 37.4583507,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300003,
+      "feature_id": "pdf2_page1_shortcuts",
+      "name": "PDF2 page 1 east shortcut south road",
+      "x": 126.9499001,
+      "y": 37.4574406,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300004,
+      "feature_id": "pdf2_page1_shortcuts",
+      "name": "PDF2 page 1 east shortcut north road",
+      "x": 126.9501599,
+      "y": 37.4578859,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300005,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 north road connector",
+      "x": 126.9486978,
+      "y": 37.459435,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300006,
+      "feature_id": "pdf2_page2_entrances",
+      "name": "PDF2 page 2 upper entrance",
+      "x": 126.9490636,
+      "y": 37.4593038,
+      "connector_walk_type": "entrance_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300007,
+      "feature_id": "pdf2_page2_entrances",
+      "name": "PDF2 page 2 middle entrance",
+      "x": 126.9492713,
+      "y": 37.4591997,
+      "connector_walk_type": "entrance_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300008,
+      "feature_id": "pdf2_page2_entrances",
+      "name": "PDF2 page 2 lower entrance",
+      "x": 126.9492289,
+      "y": 37.4590911,
+      "connector_walk_type": "entrance_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300009,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 central west connector",
+      "x": 126.9488427,
+      "y": 37.4587743,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300010,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 central south road connector",
+      "x": 126.9493603,
+      "y": 37.4583575,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300011,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 central east connector",
+      "x": 126.9495007,
+      "y": 37.4586609,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300012,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 lower west connector",
+      "x": 126.9480298,
+      "y": 37.4585095,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300013,
+      "feature_id": "pdf2_page2_shortcuts",
+      "name": "PDF2 page 2 lower east connector",
+      "x": 126.9488524,
+      "y": 37.4586361,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300014,
+      "feature_id": "pdf2_page3_shortcuts",
+      "name": "PDF2 page 3 west road connector",
+      "x": 126.948808,
+      "y": 37.4599045,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300015,
+      "feature_id": "pdf2_page3_shortcuts",
+      "name": "PDF2 page 3 path junction",
+      "x": 126.9496964,
+      "y": 37.4599206,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -300016,
+      "feature_id": "pdf2_page3_shortcuts",
+      "name": "PDF2 page 3 north road connector",
+      "x": 126.9498903,
+      "y": 37.4602685,
+      "connector_walk_type": "shortcut",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300017,
+      "feature_id": "pdf2_page3_shortcuts",
+      "name": "PDF2 page 3 building-side endpoint",
+      "x": 126.9494764,
+      "y": 37.4597331,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -300018,
+      "feature_id": "pdf2_natural_sciences_plaza",
+      "name": "PDF2 plaza vertex 1",
+      "x": 126.9505257,
+      "y": 37.4584958,
+      "connector_walk_type": "plaza_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300019,
+      "feature_id": "pdf2_natural_sciences_plaza",
+      "name": "PDF2 plaza vertex 2",
+      "x": 126.9502441,
+      "y": 37.457937,
+      "connector_walk_type": "plaza_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300020,
+      "feature_id": "pdf2_natural_sciences_plaza",
+      "name": "PDF2 plaza vertex 3",
+      "x": 126.9506422,
+      "y": 37.457792,
+      "connector_walk_type": "plaza_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -300021,
+      "feature_id": "pdf2_natural_sciences_plaza",
+      "name": "PDF2 plaza vertex 4",
+      "x": 126.9509503,
+      "y": 37.4583665,
+      "connector_walk_type": "plaza_connector",
+      "connect_to_nearest_edge": true
+    },
+    {
+      "id": -400001,
+      "feature_id": "pptx_business_p1_edge_01",
+      "name": "PPTX business page 1 edge 01 start",
+      "x": 126.9516124,
+      "y": 37.4640076,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400002,
+      "feature_id": "pptx_business_p1_edge_01",
+      "name": "PPTX business page 1 edge 01 end",
+      "x": 126.9514051,
+      "y": 37.4634096,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400003,
+      "feature_id": "pptx_business_p1_edge_02",
+      "name": "PPTX business page 1 edge 02 start",
+      "x": 126.953303,
+      "y": 37.4637769,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400004,
+      "feature_id": "pptx_business_p1_edge_02",
+      "name": "PPTX business page 1 edge 02 end",
+      "x": 126.9531766,
+      "y": 37.4637277,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400005,
+      "feature_id": "pptx_business_p1_edge_03",
+      "name": "PPTX business page 1 edge 03 start",
+      "x": 126.9530622,
+      "y": 37.4637163,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400006,
+      "feature_id": "pptx_business_p1_edge_03",
+      "name": "PPTX business page 1 edge 03 end",
+      "x": 126.9533268,
+      "y": 37.4636558,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400007,
+      "feature_id": "pptx_business_p1_edge_04",
+      "name": "PPTX business page 1 edge 04 start",
+      "x": 126.9521252,
+      "y": 37.4632147,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400008,
+      "feature_id": "pptx_business_p1_edge_04",
+      "name": "PPTX business page 1 edge 04 end",
+      "x": 126.9527642,
+      "y": 37.4633889,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400009,
+      "feature_id": "pptx_business_p1_edge_06",
+      "name": "PPTX business page 1 edge 06 start",
+      "x": 126.9523447,
+      "y": 37.4623725,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400010,
+      "feature_id": "pptx_business_p1_edge_06",
+      "name": "PPTX business page 1 edge 06 end",
+      "x": 126.9523948,
+      "y": 37.4622495,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400011,
+      "feature_id": "pptx_business_p1_edge_07",
+      "name": "PPTX business page 1 edge 07 start",
+      "x": 126.9520038,
+      "y": 37.4623479,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400012,
+      "feature_id": "pptx_business_p1_edge_07",
+      "name": "PPTX business page 1 edge 07 end",
+      "x": 126.9519346,
+      "y": 37.4622741,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400013,
+      "feature_id": "pptx_business_p1_edge_08",
+      "name": "PPTX business page 1 edge 08 start",
+      "x": 126.9543548,
+      "y": 37.4619999,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400014,
+      "feature_id": "pptx_business_p1_edge_08",
+      "name": "PPTX business page 1 edge 08 end",
+      "x": 126.9545789,
+      "y": 37.4623217,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400015,
+      "feature_id": "pptx_business_p1_edge_09",
+      "name": "PPTX business page 1 edge 09 start",
+      "x": 126.9516271,
+      "y": 37.4620204,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400016,
+      "feature_id": "pptx_business_p1_edge_09",
+      "name": "PPTX business page 1 edge 09 end",
+      "x": 126.9515365,
+      "y": 37.4620829,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400017,
+      "feature_id": "pptx_business_p1_edge_10",
+      "name": "PPTX business page 1 edge 10 start",
+      "x": 126.951577,
+      "y": 37.4619258,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400018,
+      "feature_id": "pptx_business_p1_edge_10",
+      "name": "PPTX business page 1 edge 10 end",
+      "x": 126.9516033,
+      "y": 37.4618936,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400019,
+      "feature_id": "pptx_business_p1_edge_11",
+      "name": "PPTX business page 1 edge 11 start",
+      "x": 126.9532747,
+      "y": 37.4618162,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -400020,
+      "feature_id": "pptx_business_p1_edge_11",
+      "name": "PPTX business page 1 edge 11 end",
+      "x": 126.9529624,
+      "y": 37.4618048,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -400021,
+      "feature_id": "pptx_business_p2_edge_01",
+      "name": "PPTX business page 2 edge 01 start",
+      "x": 126.9529693,
+      "y": 37.4682777,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400022,
+      "feature_id": "pptx_business_p2_edge_01",
+      "name": "PPTX business page 2 edge 01 end",
+      "x": 126.9522994,
+      "y": 37.4680388,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400023,
+      "feature_id": "pptx_business_p2_edge_02",
+      "name": "PPTX business page 2 edge 02 start",
+      "x": 126.9531085,
+      "y": 37.4683912,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400024,
+      "feature_id": "pptx_business_p2_edge_02",
+      "name": "PPTX business page 2 edge 02 end",
+      "x": 126.9533568,
+      "y": 37.4680387,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400025,
+      "feature_id": "pptx_business_p2_edge_05",
+      "name": "PPTX business page 2 edge 05 start",
+      "x": 126.9524611,
+      "y": 37.4658794,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400026,
+      "feature_id": "pptx_business_p2_edge_05",
+      "name": "PPTX business page 2 edge 05 end",
+      "x": 126.9528262,
+      "y": 37.4670084,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400027,
+      "feature_id": "pptx_business_p2_edge_08",
+      "name": "PPTX business page 2 edge 08 start",
+      "x": 126.9516031,
+      "y": 37.4663782,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400028,
+      "feature_id": "pptx_business_p2_edge_08",
+      "name": "PPTX business page 2 edge 08 end",
+      "x": 126.9502748,
+      "y": 37.4665007,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400029,
+      "feature_id": "pptx_business_p2_edge_09",
+      "name": "PPTX business page 2 edge 09 start",
+      "x": 126.9542523,
+      "y": 37.4666678,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400030,
+      "feature_id": "pptx_business_p2_edge_09",
+      "name": "PPTX business page 2 edge 09 end",
+      "x": 126.9548732,
+      "y": 37.46639,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400031,
+      "feature_id": "pptx_business_p2_edge_11",
+      "name": "PPTX business page 2 edge 11 start",
+      "x": 126.9536351,
+      "y": 37.4661631,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400032,
+      "feature_id": "pptx_business_p2_edge_11",
+      "name": "PPTX business page 2 edge 11 end",
+      "x": 126.9529955,
+      "y": 37.4664976,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400033,
+      "feature_id": "pptx_business_p2_edge_14",
+      "name": "PPTX business page 2 edge 14 start",
+      "x": 126.9553285,
+      "y": 37.4657926,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400034,
+      "feature_id": "pptx_business_p2_edge_14",
+      "name": "PPTX business page 2 edge 14 end",
+      "x": 126.9541016,
+      "y": 37.4646935,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400035,
+      "feature_id": "pptx_business_p3_edge_07",
+      "name": "PPTX business page 3 edge 07 start",
+      "x": 126.9519948,
+      "y": 37.4603938,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400036,
+      "feature_id": "pptx_business_p3_edge_07",
+      "name": "PPTX business page 3 edge 07 end",
+      "x": 126.9522586,
+      "y": 37.4601548,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut",
+      "floor_offset": 1
+    },
+    {
+      "id": -400037,
+      "feature_id": "pptx_business_p3_edge_09",
+      "name": "PPTX business page 3 edge 09 start",
+      "x": 126.9516426,
+      "y": 37.4588911,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400038,
+      "feature_id": "pptx_business_p3_edge_09",
+      "name": "PPTX business page 3 edge 09 end",
+      "x": 126.9527761,
+      "y": 37.4603032,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400039,
+      "feature_id": "pptx_business_p3_edge_10",
+      "name": "PPTX business page 3 edge 10 start",
+      "x": 126.9535082,
+      "y": 37.4600361,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400040,
+      "feature_id": "pptx_business_p3_edge_10",
+      "name": "PPTX business page 3 edge 10 end",
+      "x": 126.9533645,
+      "y": 37.4598846,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400041,
+      "feature_id": "pptx_business_p3_edge_11",
+      "name": "PPTX business page 3 edge 11 start",
+      "x": 126.9522133,
+      "y": 37.4593113,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400042,
+      "feature_id": "pptx_business_p3_edge_11",
+      "name": "PPTX business page 3 edge 11 end",
+      "x": 126.9520696,
+      "y": 37.4594206,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400043,
+      "feature_id": "pptx_business_p4_edge_13",
+      "name": "PPTX business page 4 edge 13 start",
+      "x": 126.9586457,
+      "y": 37.4628215,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400044,
+      "feature_id": "pptx_business_p4_edge_13",
+      "name": "PPTX business page 4 edge 13 end",
+      "x": 126.9590369,
+      "y": 37.4629942,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "shortcut"
+    },
+    {
+      "id": -400045,
+      "feature_id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02 vertex 1",
+      "x": 126.9539206,
+      "y": 37.4636294,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400046,
+      "feature_id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02 vertex 2",
+      "x": 126.9539635,
+      "y": 37.4635045,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400047,
+      "feature_id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02 vertex 3",
+      "x": 126.9538848,
+      "y": 37.4633985,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400048,
+      "feature_id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02 vertex 4",
+      "x": 126.9541853,
+      "y": 37.4633171,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400049,
+      "feature_id": "pptx_business_p1_plaza_02",
+      "name": "PPTX business page 1 plaza 02 vertex 5",
+      "x": 126.9542138,
+      "y": 37.4635745,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400050,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 1",
+      "x": 126.9528453,
+      "y": 37.462876,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400051,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 2",
+      "x": 126.9527643,
+      "y": 37.4626603,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400052,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 3",
+      "x": 126.9528668,
+      "y": 37.4626016,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400053,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 4",
+      "x": 126.9528573,
+      "y": 37.4625051,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400054,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 5",
+      "x": 126.9530815,
+      "y": 37.4625108,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400055,
+      "feature_id": "pptx_business_p1_plaza_05",
+      "name": "PPTX business page 1 plaza 05 vertex 6",
+      "x": 126.9532412,
+      "y": 37.4627644,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400056,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 1",
+      "x": 126.9516107,
+      "y": 37.4671488,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400057,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 2",
+      "x": 126.9517424,
+      "y": 37.466659,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400058,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 3",
+      "x": 126.9518026,
+      "y": 37.4667486,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400059,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 4",
+      "x": 126.9520698,
+      "y": 37.4667844,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400060,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 5",
+      "x": 126.9521337,
+      "y": 37.466653,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400061,
+      "feature_id": "pptx_business_p2_plaza_06",
+      "name": "PPTX business page 2 plaza 06 vertex 6",
+      "x": 126.9519644,
+      "y": 37.4672503,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400062,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 1",
+      "x": 126.9519869,
+      "y": 37.4656255,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400063,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 2",
+      "x": 126.9520282,
+      "y": 37.4650312,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400064,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 3",
+      "x": 126.9519116,
+      "y": 37.4649595,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400065,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 4",
+      "x": 126.9527093,
+      "y": 37.46507,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400066,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 5",
+      "x": 126.9525588,
+      "y": 37.4651387,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400067,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 6",
+      "x": 126.9525626,
+      "y": 37.4654971,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400068,
+      "feature_id": "pptx_business_p2_plaza_09",
+      "name": "PPTX business page 2 plaza 09 vertex 7",
+      "x": 126.9520998,
+      "y": 37.4654851,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400069,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 1",
+      "x": 126.9525734,
+      "y": 37.4608703,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400070,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 2",
+      "x": 126.952536,
+      "y": 37.4606672,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400071,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 3",
+      "x": 126.9526915,
+      "y": 37.4606094,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400072,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 4",
+      "x": 126.9526207,
+      "y": 37.4604469,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400073,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 5",
+      "x": 126.9527033,
+      "y": 37.460586,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400074,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 6",
+      "x": 126.9531264,
+      "y": 37.4604485,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400075,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 7",
+      "x": 126.9533173,
+      "y": 37.4608047,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400076,
+      "feature_id": "pptx_business_p3_plaza_06",
+      "name": "PPTX business page 3 plaza 06 vertex 8",
+      "x": 126.9527879,
+      "y": 37.4609374,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400077,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 1",
+      "x": 126.9543544,
+      "y": 37.4607281,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400078,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 2",
+      "x": 126.9541773,
+      "y": 37.4607625,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400079,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 3",
+      "x": 126.9539884,
+      "y": 37.4603985,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400080,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 4",
+      "x": 126.9538782,
+      "y": 37.4604095,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400081,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 5",
+      "x": 126.9540789,
+      "y": 37.4602001,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400082,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 6",
+      "x": 126.9542068,
+      "y": 37.4602298,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400083,
+      "feature_id": "pptx_business_p3_plaza_09",
+      "name": "PPTX business page 3 plaza 09 vertex 7",
+      "x": 126.9544941,
+      "y": 37.4605641,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400084,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 1",
+      "x": 126.9534491,
+      "y": 37.4603985,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400085,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 2",
+      "x": 126.953335,
+      "y": 37.4602892,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400086,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 3",
+      "x": 126.9532268,
+      "y": 37.4602782,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400087,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 4",
+      "x": 126.9533094,
+      "y": 37.460272,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400088,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 5",
+      "x": 126.9535594,
+      "y": 37.4599971,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400089,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 6",
+      "x": 126.9537798,
+      "y": 37.4602189,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400090,
+      "feature_id": "pptx_business_p3_plaza_15",
+      "name": "PPTX business page 3 plaza 15 vertex 7",
+      "x": 126.9536676,
+      "y": 37.4603845,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400091,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 1",
+      "x": 126.9550294,
+      "y": 37.4602954,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400092,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 2",
+      "x": 126.9547342,
+      "y": 37.4598783,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400093,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 3",
+      "x": 126.9550589,
+      "y": 37.4597471,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400094,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 4",
+      "x": 126.9553679,
+      "y": 37.4600939,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400095,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 5",
+      "x": 126.9552931,
+      "y": 37.4601002,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400096,
+      "feature_id": "pptx_business_p3_plaza_17",
+      "name": "PPTX business page 3 plaza 17 vertex 6",
+      "x": 126.9552419,
+      "y": 37.4602579,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400097,
+      "feature_id": "pptx_business_p4_plaza_07",
+      "name": "PPTX business page 4 plaza 07 vertex 1",
+      "x": 126.9576449,
+      "y": 37.4615302,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400098,
+      "feature_id": "pptx_business_p4_plaza_07",
+      "name": "PPTX business page 4 plaza 07 vertex 2",
+      "x": 126.9572695,
+      "y": 37.4614054,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400099,
+      "feature_id": "pptx_business_p4_plaza_07",
+      "name": "PPTX business page 4 plaza 07 vertex 3",
+      "x": 126.9574582,
+      "y": 37.4610657,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
+    },
+    {
+      "id": -400100,
+      "feature_id": "pptx_business_p4_plaza_07",
+      "name": "PPTX business page 4 plaza 07 vertex 4",
+      "x": 126.9578389,
+      "y": 37.4611781,
+      "connect_to_nearest_edge": true,
+      "connector_walk_type": "plaza_connector"
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "u": -200011,
+      "v": -200012,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "walk_type": "plaza_connector",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9533625,
+          37.4563596
+        ],
+        [
+          126.9538199,
+          37.4563449
+        ]
+      ]
+    },
+    {
+      "u": -200013,
+      "v": -200014,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "walk_type": "plaza_connector",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9543718,
+          37.45567
+        ],
+        [
+          126.954642,
+          37.455393
+        ]
+      ]
+    },
+    {
+      "u": -200015,
+      "v": -200016,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "walk_type": "plaza_connector",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9538683,
+          37.4557746
+        ],
+        [
+          126.9535518,
+          37.4557618
+        ]
+      ]
+    },
+    {
+      "u": -200017,
+      "v": -200018,
+      "feature_id": "pdf_pharmacy_plaza_connectors",
+      "walk_type": "plaza_connector",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9539768,
+          37.4556059
+        ],
+        [
+          126.9536349,
+          37.4555509
+        ]
+      ]
+    },
+    {
+      "u": -200024,
+      "v": -200025,
+      "feature_id": "pdf_multimedia",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9510747,
+          37.4562844
+        ],
+        [
+          126.9514553,
+          37.4563204
+        ]
+      ]
+    },
+    {
+      "u": -200029,
+      "v": -200030,
+      "feature_id": "pdf_300_301",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9529102,
+          37.4507384
+        ],
+        [
+          126.9521049,
+          37.4505188
+        ]
+      ]
+    },
+    {
+      "u": -200031,
+      "v": -200032,
+      "feature_id": "pdf_300_301",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9518526,
+          37.4501875
+        ],
+        [
+          126.9522262,
+          37.4501818
+        ]
+      ]
+    },
+    {
+      "u": -200033,
+      "v": -200034,
+      "feature_id": "pdf_car_center",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9523614,
+          37.4510671
+        ],
+        [
+          126.9526785,
+          37.4517907
+        ]
+      ]
+    },
+    {
+      "u": -200035,
+      "v": -200036,
+      "feature_id": "pdf_car_center",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9523288,
+          37.4521898
+        ],
+        [
+          126.9529075,
+          37.4529348
+        ]
+      ]
+    },
+    {
+      "u": -300001,
+      "v": -300002,
+      "feature_id": "pdf2_page1_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9489983,
+          37.4580992
+        ],
+        [
+          126.9492007,
+          37.4581848
+        ],
+        [
+          126.9492316,
+          37.4583507
+        ]
+      ]
+    },
+    {
+      "u": -300003,
+      "v": -300004,
+      "feature_id": "pdf2_page1_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9499001,
+          37.4574406
+        ],
+        [
+          126.9501599,
+          37.4578859
+        ]
+      ]
+    },
+    {
+      "u": -300005,
+      "v": -300006,
+      "feature_id": "pdf2_page2_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9486978,
+          37.459435
+        ],
+        [
+          126.9490316,
+          37.4593101
+        ],
+        [
+          126.9490636,
+          37.4593038
+        ]
+      ]
+    },
+    {
+      "u": -300007,
+      "v": -300008,
+      "feature_id": "pdf2_page2_entrances",
+      "walk_type": "entrance_connector",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9492713,
+          37.4591997
+        ],
+        [
+          126.9492372,
+          37.4591122
+        ],
+        [
+          126.9492289,
+          37.4590911
+        ]
+      ]
+    },
+    {
+      "u": -300009,
+      "v": -300010,
+      "feature_id": "pdf2_page2_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9488427,
+          37.4587743
+        ],
+        [
+          126.9492371,
+          37.45883
+        ],
+        [
+          126.9493603,
+          37.4583575
+        ]
+      ]
+    },
+    {
+      "u": -300010,
+      "v": -300011,
+      "feature_id": "pdf2_page2_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9493603,
+          37.4583575
+        ],
+        [
+          126.9495007,
+          37.4586609
+        ]
+      ]
+    },
+    {
+      "u": -300012,
+      "v": -300013,
+      "feature_id": "pdf2_page2_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9480298,
+          37.4585095
+        ],
+        [
+          126.9488524,
+          37.4586361
+        ]
+      ]
+    },
+    {
+      "u": -300014,
+      "v": -300015,
+      "feature_id": "pdf2_page3_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.948808,
+          37.4599045
+        ],
+        [
+          126.9491742,
+          37.4599204
+        ],
+        [
+          126.9493682,
+          37.4600333
+        ],
+        [
+          126.9496964,
+          37.4599206
+        ]
+      ]
+    },
+    {
+      "u": -300015,
+      "v": -300016,
+      "feature_id": "pdf2_page3_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9496964,
+          37.4599206
+        ],
+        [
+          126.9498903,
+          37.4602685
+        ]
+      ]
+    },
+    {
+      "u": -300015,
+      "v": -300017,
+      "feature_id": "pdf2_page3_shortcuts",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9496964,
+          37.4599206
+        ],
+        [
+          126.9495744,
+          37.4597014
+        ],
+        [
+          126.9494764,
+          37.4597331
+        ]
+      ]
+    },
+    {
+      "u": -400001,
+      "v": -400002,
+      "feature_id": "pptx_business_p1_edge_01",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9516124,
+          37.4640076
+        ],
+        [
+          126.9515218,
+          37.4640076
+        ],
+        [
+          126.9513931,
+          37.4639338
+        ],
+        [
+          126.9511881,
+          37.4634587
+        ],
+        [
+          126.9514051,
+          37.4634096
+        ]
+      ]
+    },
+    {
+      "u": -400003,
+      "v": -400004,
+      "feature_id": "pptx_business_p1_edge_02",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.953303,
+          37.4637769
+        ],
+        [
+          126.9531766,
+          37.4637277
+        ]
+      ]
+    },
+    {
+      "u": -400005,
+      "v": -400006,
+      "feature_id": "pptx_business_p1_edge_03",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9530622,
+          37.4637163
+        ],
+        [
+          126.9530574,
+          37.4636671
+        ],
+        [
+          126.9533268,
+          37.4636558
+        ]
+      ]
+    },
+    {
+      "u": -400007,
+      "v": -400008,
+      "feature_id": "pptx_business_p1_edge_04",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9521252,
+          37.4632147
+        ],
+        [
+          126.9522182,
+          37.4632185
+        ],
+        [
+          126.9523851,
+          37.4631258
+        ],
+        [
+          126.9524876,
+          37.4631144
+        ],
+        [
+          126.9525782,
+          37.4633737
+        ],
+        [
+          126.9527642,
+          37.4633889
+        ]
+      ]
+    },
+    {
+      "u": -400009,
+      "v": -400010,
+      "feature_id": "pptx_business_p1_edge_06",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9523447,
+          37.4623725
+        ],
+        [
+          126.9523972,
+          37.4623347
+        ],
+        [
+          126.9523948,
+          37.4622495
+        ]
+      ]
+    },
+    {
+      "u": -400011,
+      "v": -400012,
+      "feature_id": "pptx_business_p1_edge_07",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9520038,
+          37.4623479
+        ],
+        [
+          126.9519346,
+          37.4622741
+        ]
+      ]
+    },
+    {
+      "u": -400013,
+      "v": -400014,
+      "feature_id": "pptx_business_p1_edge_08",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9543548,
+          37.4619999
+        ],
+        [
+          126.954257,
+          37.4622895
+        ],
+        [
+          126.9545789,
+          37.4623217
+        ]
+      ]
+    },
+    {
+      "u": -400015,
+      "v": -400016,
+      "feature_id": "pptx_business_p1_edge_09",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9516271,
+          37.4620204
+        ],
+        [
+          126.9515365,
+          37.4620829
+        ]
+      ]
+    },
+    {
+      "u": -400017,
+      "v": -400018,
+      "feature_id": "pptx_business_p1_edge_10",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.951577,
+          37.4619258
+        ],
+        [
+          126.9516033,
+          37.4618936
+        ]
+      ]
+    },
+    {
+      "u": -400019,
+      "v": -400020,
+      "feature_id": "pptx_business_p1_edge_11",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9532747,
+          37.4618162
+        ],
+        [
+          126.9529624,
+          37.4618048
+        ]
+      ]
+    },
+    {
+      "u": -400021,
+      "v": -400022,
+      "feature_id": "pptx_business_p2_edge_01",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9529693,
+          37.4682777
+        ],
+        [
+          126.9526155,
+          37.4685316
+        ],
+        [
+          126.9522016,
+          37.4687078
+        ],
+        [
+          126.9521489,
+          37.4685645
+        ],
+        [
+          126.9522994,
+          37.4680388
+        ]
+      ]
+    },
+    {
+      "u": -400023,
+      "v": -400024,
+      "feature_id": "pptx_business_p2_edge_02",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9531085,
+          37.4683912
+        ],
+        [
+          126.9532816,
+          37.4683285
+        ],
+        [
+          126.9533568,
+          37.4680387
+        ]
+      ]
+    },
+    {
+      "u": -400025,
+      "v": -400026,
+      "feature_id": "pptx_business_p2_edge_05",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9524611,
+          37.4658794
+        ],
+        [
+          126.9522052,
+          37.4667396
+        ],
+        [
+          126.9528262,
+          37.4670084
+        ]
+      ]
+    },
+    {
+      "u": -400027,
+      "v": -400028,
+      "feature_id": "pptx_business_p2_edge_08",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9516031,
+          37.4663782
+        ],
+        [
+          126.9509709,
+          37.4663842
+        ],
+        [
+          126.9508618,
+          37.4664977
+        ],
+        [
+          126.9502748,
+          37.4665007
+        ]
+      ]
+    },
+    {
+      "u": -400029,
+      "v": -400030,
+      "feature_id": "pptx_business_p2_edge_09",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9542523,
+          37.4666678
+        ],
+        [
+          126.9545345,
+          37.4666528
+        ],
+        [
+          126.9548732,
+          37.46639
+        ]
+      ]
+    },
+    {
+      "u": -400031,
+      "v": -400032,
+      "feature_id": "pptx_business_p2_edge_11",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9536351,
+          37.4661631
+        ],
+        [
+          126.9534884,
+          37.4665394
+        ],
+        [
+          126.9533341,
+          37.4665782
+        ],
+        [
+          126.9529955,
+          37.4664976
+        ]
+      ]
+    },
+    {
+      "u": -400033,
+      "v": -400034,
+      "feature_id": "pptx_business_p2_edge_14",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9553285,
+          37.4657926
+        ],
+        [
+          126.9552118,
+          37.465706
+        ],
+        [
+          126.9549446,
+          37.4657837
+        ],
+        [
+          126.9548242,
+          37.4656881
+        ],
+        [
+          126.9541016,
+          37.4646935
+        ]
+      ]
+    },
+    {
+      "u": -400035,
+      "v": -400036,
+      "feature_id": "pptx_business_p3_edge_07",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9519948,
+          37.4603938
+        ],
+        [
+          126.9519496,
+          37.4602689
+        ],
+        [
+          126.9522153,
+          37.4601486
+        ],
+        [
+          126.9522586,
+          37.4601548
+        ]
+      ]
+    },
+    {
+      "u": -400037,
+      "v": -400038,
+      "feature_id": "pptx_business_p3_edge_09",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9516426,
+          37.4588911
+        ],
+        [
+          126.9514222,
+          37.4590723
+        ],
+        [
+          126.951312,
+          37.4592207
+        ],
+        [
+          126.9522822,
+          37.459869
+        ],
+        [
+          126.9526049,
+          37.4600174
+        ],
+        [
+          126.9527761,
+          37.4603032
+        ]
+      ]
+    },
+    {
+      "u": -400039,
+      "v": -400040,
+      "feature_id": "pptx_business_p3_edge_10",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9535082,
+          37.4600361
+        ],
+        [
+          126.9533645,
+          37.4598846
+        ]
+      ]
+    },
+    {
+      "u": -400041,
+      "v": -400042,
+      "feature_id": "pptx_business_p3_edge_11",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9522133,
+          37.4593113
+        ],
+        [
+          126.9520696,
+          37.4594206
+        ]
+      ]
+    },
+    {
+      "u": -400043,
+      "v": -400044,
+      "feature_id": "pptx_business_p4_edge_13",
+      "walk_type": "shortcut",
+      "bidirectional": true,
+      "geometry_lon_lat": [
+        [
+          126.9586457,
+          37.4628215
+        ],
+        [
+          126.9586353,
+          37.4629548
+        ],
+        [
+          126.9590369,
+          37.4629942
+        ]
+      ]
+    }
+  ]
 }

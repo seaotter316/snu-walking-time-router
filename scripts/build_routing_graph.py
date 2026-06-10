@@ -58,6 +58,8 @@ NEAR_DUPLICATE_DISTANCE_M = 0.75
 NEAR_DUPLICATE_COVERAGE = 0.9
 AUTO_STITCH_MAX_COMPONENT_SIZE = 12
 AUTO_STITCH_MAX_DISTANCE_M = 8.0
+AUTO_STITCH_EXTENDED_MAX_COMPONENT_SIZE = 6
+AUTO_STITCH_EXTENDED_MAX_DISTANCE_M = 35.0
 AUTO_STITCH_NODE_BASE = -700000
 AUTO_STITCH_FEATURE_ID = "auto_component_stitch"
 AUTO_STITCH_WALK_TYPE = "entrance_connector"
@@ -930,21 +932,42 @@ def split_node_for_edge_distance(
     return node_id
 
 
+def is_extended_auto_stitch_component(G: nx.MultiDiGraph, component: set[Any]) -> bool:
+    if len(component) > AUTO_STITCH_EXTENDED_MAX_COMPONENT_SIZE:
+        return False
+
+    allowed_manual_features = {"osm_entrances", AUTO_STITCH_FEATURE_ID}
+    for node_id in component:
+        data = G.nodes[node_id]
+        source = data.get("source")
+        if source is None:
+            continue
+        if source == "osm_entrance":
+            continue
+        if source == "manual" and data.get("feature_id") in allowed_manual_features:
+            continue
+        return False
+    return True
+
+
 def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | float]:
     components = sorted(nx.connected_components(G.to_undirected()), key=len, reverse=True)
     if len(components) <= 1:
         return {
             "auto_stitch_components_before": len(components),
             "auto_stitch_components_connected": 0,
+            "auto_stitch_extended_components_connected": 0,
             "auto_stitch_connector_edges": 0,
             "auto_stitch_split_original_edges_removed": 0,
             "auto_stitch_split_edges_added": 0,
             "auto_stitch_max_distance_m": AUTO_STITCH_MAX_DISTANCE_M,
+            "auto_stitch_extended_max_distance_m": AUTO_STITCH_EXTENDED_MAX_DISTANCE_M,
         }
 
     main_component = set(components[0])
     split_registry: dict[tuple[Any, Any, Any], list[dict[str, Any]]] = {}
     connected_components = 0
+    extended_connected_components = 0
     connector_edges = 0
 
     main_edges = [
@@ -954,7 +977,12 @@ def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | 
     ]
 
     for component_index, component in enumerate(components[1:], start=1):
-        if len(component) > AUTO_STITCH_MAX_COMPONENT_SIZE:
+        extended_component = is_extended_auto_stitch_component(G, component)
+        max_distance = AUTO_STITCH_EXTENDED_MAX_DISTANCE_M if extended_component else AUTO_STITCH_MAX_DISTANCE_M
+        max_component_size = (
+            AUTO_STITCH_EXTENDED_MAX_COMPONENT_SIZE if extended_component else AUTO_STITCH_MAX_COMPONENT_SIZE
+        )
+        if len(component) > max_component_size:
             continue
 
         component_edges = [
@@ -973,7 +1001,7 @@ def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | 
         for component_edge in component_edges:
             for main_edge in main_edges:
                 distance = component_edge[4].distance(main_edge[4])
-                if distance > AUTO_STITCH_MAX_DISTANCE_M:
+                if distance > max_distance:
                     continue
                 if best is None or distance < best[0]:
                     best = (distance, component_edge, main_edge)
@@ -1019,16 +1047,20 @@ def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | 
             source="manual",
         )
         connected_components += 1
+        if extended_component and distance > AUTO_STITCH_MAX_DISTANCE_M:
+            extended_connected_components += 1
         main_component.update(component)
 
     split_stats = split_registered_edges(G, split_registry)
     return {
         "auto_stitch_components_before": len(components),
         "auto_stitch_components_connected": connected_components,
+        "auto_stitch_extended_components_connected": extended_connected_components,
         "auto_stitch_connector_edges": connector_edges,
         "auto_stitch_split_original_edges_removed": split_stats["split_original_edges_removed"],
         "auto_stitch_split_edges_added": split_stats["split_edges_added"],
         "auto_stitch_max_distance_m": AUTO_STITCH_MAX_DISTANCE_M,
+        "auto_stitch_extended_max_distance_m": AUTO_STITCH_EXTENDED_MAX_DISTANCE_M,
     }
 
 

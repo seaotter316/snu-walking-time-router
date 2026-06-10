@@ -10,7 +10,7 @@ class RouteRequest(BaseModel):
     start_lat: float = Field(..., ge=-90, le=90)
     end_lon: float = Field(..., ge=-180, le=180)
     end_lat: float = Field(..., ge=-90, le=90)
-    base_walk_speed_kmh: float | None = Field(None, gt=0, le=12)
+    base_walk_speed_kmh: float | None = Field(None, gt=0)
     calibration_actual_time_sec: float | None = Field(None, gt=0)
     allow_shuttle: bool = True
 

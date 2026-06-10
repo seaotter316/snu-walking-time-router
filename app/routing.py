@@ -12,8 +12,6 @@ from shapely.geometry import LineString
 TO_UTM = Transformer.from_crs("EPSG:4326", "EPSG:32652", always_xy=True)
 
 DEFAULT_BASE_WALK_SPEED_KMH = 6.0
-MIN_BASE_WALK_SPEED_KMH = 2.0
-MAX_BASE_WALK_SPEED_KMH = 9.0
 MIN_EDGE_TIME_SEC = 0.1
 
 WALK_TYPE_FACTORS = {
@@ -119,7 +117,9 @@ def classify_walk_type(data: dict[str, Any]) -> str:
 def sanitize_base_walk_speed_kmh(value: float | None) -> float:
     if value is None or not math.isfinite(value):
         return DEFAULT_BASE_WALK_SPEED_KMH
-    return max(MIN_BASE_WALK_SPEED_KMH, min(float(value), MAX_BASE_WALK_SPEED_KMH))
+    if value <= 0:
+        return DEFAULT_BASE_WALK_SPEED_KMH
+    return float(value)
 
 
 def tobler_speed_kmh(
@@ -130,7 +130,7 @@ def tobler_speed_kmh(
     base_speed_kmh = sanitize_base_walk_speed_kmh(base_speed_kmh)
     speed = base_speed_kmh * math.exp(-3.5 * abs(slope + 0.05))
     speed *= WALK_TYPE_FACTORS.get(walk_type, 1.0)
-    return max(0.5, min(speed, base_speed_kmh * 1.05))
+    return speed
 
 
 def is_shuttle_edge(data: dict[str, Any]) -> bool:
@@ -410,7 +410,7 @@ def calibrate_base_walk_speed(
     return {
         "calibrated_base_walk_speed_kmh": round(calibrated_speed, 2),
         "raw_calibrated_base_walk_speed_kmh": round(raw_speed, 2),
-        "calibration_clamped": abs(calibrated_speed - raw_speed) > 1e-6,
+        "calibration_clamped": False,
         "calibration_actual_time_sec": round(actual_time_sec, 1),
         "calibration_default_time_sec": summary["total_time_sec"],
         "calibration_fixed_time_sec": round(fixed_time, 1),

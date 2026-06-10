@@ -14,11 +14,13 @@ from pyproj import Transformer
 from .routing import (
     add_time_weights,
     as_float,
+    calibrate_base_walk_speed,
     edge_geometry,
     graph_needs_time_weights,
     json_safe,
     normalize_graph_values,
     route_geojson,
+    sanitize_base_walk_speed_kmh,
     shortest_time_route,
 )
 
@@ -64,21 +66,50 @@ class RoutingGraph:
             raise ValueError("The routing graph has no nodes.")
         return best_node, math.sqrt(best_distance_sq)
 
-    def route_between_points(self, start_lon: float, start_lat: float, end_lon: float, end_lat: float) -> dict[str, Any]:
+    def route_between_points(
+        self,
+        start_lon: float,
+        start_lat: float,
+        end_lon: float,
+        end_lat: float,
+        base_walk_speed_kmh: float | None = None,
+        calibration_actual_time_sec: float | None = None,
+        allow_shuttle: bool = True,
+    ) -> dict[str, Any]:
         start_node, start_snap_distance_m = self.nearest_node(start_lon, start_lat)
         end_node, end_snap_distance_m = self.nearest_node(end_lon, end_lat)
 
-        route, summary = shortest_time_route(self.graph, start_node, end_node)
+        route_base_speed = sanitize_base_walk_speed_kmh(base_walk_speed_kmh)
+        calibration: dict[str, Any] | None = None
+        if calibration_actual_time_sec is not None:
+            calibration = calibrate_base_walk_speed(
+                self.graph,
+                start_node,
+                end_node,
+                calibration_actual_time_sec,
+            )
+            route_base_speed = as_float(calibration["calibrated_base_walk_speed_kmh"], route_base_speed)
+
+        route, summary = shortest_time_route(
+            self.graph,
+            start_node,
+            end_node,
+            base_walk_speed_kmh=route_base_speed,
+            allow_shuttle=allow_shuttle,
+        )
         summary.update(
             {
                 "start_node": json_safe(start_node),
                 "end_node": json_safe(end_node),
                 "start_snap_distance_m": round(start_snap_distance_m, 2),
                 "end_snap_distance_m": round(end_snap_distance_m, 2),
+                "allow_shuttle": allow_shuttle,
             }
         )
+        if calibration is not None:
+            summary.update(calibration)
         return {
-            "route_geojson": route_geojson(self.graph, route, summary),
+            "route_geojson": route_geojson(self.graph, route, summary, route_base_speed, allow_shuttle),
             "summary": summary,
         }
 
@@ -104,6 +135,8 @@ def load_routing_graph() -> RoutingGraph:
 def build_projected_node_index(graph: nx.MultiDiGraph) -> list[ProjectedNode]:
     nodes: list[ProjectedNode] = []
     for node_id, data in graph.nodes(data=True):
+        if str(data.get("snap_exclude", "")).lower() == "true":
+            continue
         x, y = TO_UTM.transform(as_float(data.get("x")), as_float(data.get("y")))
         nodes.append(ProjectedNode(node_id=node_id, x=x, y=y))
     return nodes
@@ -122,19 +155,44 @@ def layer_geojson(layer_name: str, graph: nx.MultiDiGraph | None = None) -> dict
     if layer_name == "entrances":
         return read_json(ENTRANCES_PATH)
     if layer_name == "elevation_nodes":
-        return read_json(ROUTING_NODES_PATH)
+        return without_snap_excluded_nodes(read_json(ROUTING_NODES_PATH))
     if layer_name == "manual_features":
         return manual_features_geojson(graph)
+    if layer_name == "shuttle_features":
+        return shuttle_features_geojson(graph)
     raise KeyError(layer_name)
 
 
 def without_manual_edges(data: dict[str, Any]) -> dict[str, Any]:
+    rendered_edges: set[tuple[str, str, str, str]] = set()
+    features = []
+    for feature in data.get("features", []):
+        properties = feature.get("properties", {})
+        if properties.get("source") in {"manual", "snu_shuttle", "snu_shuttle_connector", "building_internal"}:
+            continue
+        edge_key = (
+            *sorted((str(properties.get("u")), str(properties.get("v")))),
+            str(properties.get("osmid", "")),
+            str(properties.get("walk_type", "")),
+        )
+        if edge_key in rendered_edges:
+            continue
+        rendered_edges.add(edge_key)
+        features.append(feature)
+
+    return {
+        "type": "FeatureCollection",
+        "features": features,
+    }
+
+
+def without_snap_excluded_nodes(data: dict[str, Any]) -> dict[str, Any]:
     return {
         "type": "FeatureCollection",
         "features": [
             feature
             for feature in data.get("features", [])
-            if feature.get("properties", {}).get("source") != "manual"
+            if str(feature.get("properties", {}).get("snap_exclude", "")).lower() != "true"
         ],
     }
 
@@ -194,6 +252,53 @@ def manual_features_geojson(graph: nx.MultiDiGraph | None) -> dict[str, Any]:
                     "kind": "edge",
                     "feature_id": data.get("feature_id", ""),
                     "walk_type": data.get("walk_type", "manual"),
+                },
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [[float(lon), float(lat)] for lon, lat in line.coords],
+                },
+            }
+        )
+
+    return {"type": "FeatureCollection", "features": features}
+
+
+def shuttle_features_geojson(graph: nx.MultiDiGraph | None) -> dict[str, Any]:
+    features: list[dict[str, Any]] = []
+    if graph is None:
+        return {"type": "FeatureCollection", "features": features}
+
+    for node_id, data in graph.nodes(data=True):
+        if data.get("source") != "snu_shuttle" or data.get("node_role") != "shuttle_stop":
+            continue
+        features.append(
+            {
+                "type": "Feature",
+                "properties": {
+                    "kind": "stop",
+                    "node_id": json_safe(node_id),
+                    "name": data.get("name", "셔틀 정류장"),
+                    "station_code": data.get("snu_station_code", ""),
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [as_float(data.get("x")), as_float(data.get("y"))],
+                },
+            }
+        )
+
+    for u, v, _, data in graph.edges(keys=True, data=True):
+        if data.get("source") != "snu_shuttle" or data.get("walk_type") != "shuttle_ride":
+            continue
+        line = edge_geometry(graph, u, v, data)
+        features.append(
+            {
+                "type": "Feature",
+                "properties": {
+                    "kind": "ride",
+                    "from": data.get("from_stop", ""),
+                    "to": data.get("to_stop", ""),
+                    "time_sec": as_float(data.get("time_sec")),
                 },
                 "geometry": {
                     "type": "LineString",

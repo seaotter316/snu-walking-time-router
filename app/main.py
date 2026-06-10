@@ -57,7 +57,12 @@ def api_route(payload: RouteRequest, request: Request) -> dict:
             payload.start_lat,
             payload.end_lon,
             payload.end_lat,
+            payload.base_walk_speed_kmh,
+            payload.calibration_actual_time_sec,
+            payload.allow_shuttle,
         )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     except RouteNotFound as exc:
         raise HTTPException(status_code=404, detail="No walkable route was found between the snapped nodes.") from exc
 

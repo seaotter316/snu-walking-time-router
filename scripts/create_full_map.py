@@ -36,9 +36,18 @@ def line_coords(geometry) -> list[tuple[float, float]]:
 def add_network_edges(map_: folium.Map, edges: gpd.GeoDataFrame) -> None:
     group = folium.FeatureGroup(name="OSM 보행 엣지", show=True)
     base_edges = edges[edges["source"] != "manual"] if "source" in edges.columns else edges
+    rendered_edges: set[tuple[str, str, str, str]] = set()
     for _, edge in base_edges.iterrows():
         if edge.geometry is None or edge.geometry.geom_type != "LineString":
             continue
+        edge_key = (
+            *sorted((str(edge.get("u")), str(edge.get("v")))),
+            str(edge.get("osmid", "")),
+            str(edge.get("walk_type", "")),
+        )
+        if edge_key in rendered_edges:
+            continue
+        rendered_edges.add(edge_key)
         folium.PolyLine(
             line_coords(edge.geometry),
             color="#2563eb",
@@ -142,6 +151,37 @@ def add_manual_features(map_: folium.Map, nodes: gpd.GeoDataFrame, edges: gpd.Ge
     node_group.add_to(map_)
 
 
+def add_shuttle_features(map_: folium.Map, nodes: gpd.GeoDataFrame, edges: gpd.GeoDataFrame) -> None:
+    group = folium.FeatureGroup(name="셔틀 정류장/노선", show=True)
+    if "source" in edges.columns and "walk_type" in edges.columns:
+        for _, edge in edges[(edges["source"] == "snu_shuttle") & (edges["walk_type"] == "shuttle_ride")].iterrows():
+            if edge.geometry is None or edge.geometry.geom_type != "LineString":
+                continue
+            folium.PolyLine(
+                line_coords(edge.geometry),
+                color="#7c3aed",
+                weight=4,
+                opacity=0.78,
+                tooltip=f'{edge.get("from_stop", "")} → {edge.get("to_stop", "")}',
+            ).add_to(group)
+
+    if "source" in nodes.columns and "node_role" in nodes.columns:
+        for _, node in nodes[(nodes["source"] == "snu_shuttle") & (nodes["node_role"] == "shuttle_stop")].iterrows():
+            if node.geometry is None or node.geometry.geom_type != "Point":
+                continue
+            folium.CircleMarker(
+                location=[node.geometry.y, node.geometry.x],
+                radius=6,
+                color="#6d28d9",
+                fill=True,
+                fill_color="#a855f7",
+                fill_opacity=0.92,
+                tooltip=node.get("name", "셔틀 정류장"),
+            ).add_to(group)
+
+    group.add_to(map_)
+
+
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
     boundary = read_gdf(BOUNDARY_PATH)
@@ -165,6 +205,7 @@ def main() -> None:
     add_entrances(map_, entrances)
     add_elevation_nodes(map_, nodes)
     add_manual_features(map_, nodes, edges)
+    add_shuttle_features(map_, nodes, edges)
     folium.LayerControl(collapsed=False).add_to(map_)
     map_.save(FULL_HTML_PATH)
     print(FULL_HTML_PATH)

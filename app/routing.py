@@ -11,6 +11,11 @@ from shapely.geometry import LineString
 
 TO_UTM = Transformer.from_crs("EPSG:4326", "EPSG:32652", always_xy=True)
 
+DEFAULT_BASE_WALK_SPEED_KMH = 6.0
+MIN_BASE_WALK_SPEED_KMH = 2.0
+MAX_BASE_WALK_SPEED_KMH = 9.0
+MIN_EDGE_TIME_SEC = 0.1
+
 WALK_TYPE_FACTORS = {
     "footway": 1.00,
     "path": 0.98,
@@ -22,7 +27,17 @@ WALK_TYPE_FACTORS = {
     "entrance_connector": 0.90,
     "indoor": 0.95,
     "shortcut": 0.95,
+    "shuttle_connector": 0.95,
 }
+
+FIXED_TIME_WALK_TYPES = {
+    "building_internal",
+    "shuttle_wait",
+    "shuttle_ride",
+    "shuttle_dwell",
+    "shuttle_alight",
+}
+SHUTTLE_WALK_TYPES = {"shuttle_wait", "shuttle_ride", "shuttle_dwell", "shuttle_alight"}
 
 
 class RouteNotFound(Exception):
@@ -54,7 +69,21 @@ def normalize_graph_values(G: nx.MultiDiGraph) -> nx.MultiDiGraph:
             data["elevation_m"] = as_float(data.get("elevation_m"))
 
     for _, _, _, data in G.edges(keys=True, data=True):
-        for key in ("length", "grade", "grade_abs", "speed_kmh", "time_sec"):
+        for key in (
+            "length",
+            "grade",
+            "grade_abs",
+            "speed_kmh",
+            "time_sec",
+            "default_time_sec",
+            "base_walk_speed_kmh",
+            "wait_time_sec",
+            "ride_time_sec",
+            "dwell_time_sec",
+            "vertical_m",
+            "horizontal_time_sec",
+            "vertical_time_sec",
+        ):
             if key in data:
                 data[key] = as_float(data.get(key), math.nan)
         data["walk_type"] = classify_walk_type(data)
@@ -87,10 +116,74 @@ def classify_walk_type(data: dict[str, Any]) -> str:
     return "footway"
 
 
-def tobler_speed_kmh(slope: float, walk_type: str) -> float:
-    speed = 6.0 * math.exp(-3.5 * abs(slope + 0.05))
+def sanitize_base_walk_speed_kmh(value: float | None) -> float:
+    if value is None or not math.isfinite(value):
+        return DEFAULT_BASE_WALK_SPEED_KMH
+    return max(MIN_BASE_WALK_SPEED_KMH, min(float(value), MAX_BASE_WALK_SPEED_KMH))
+
+
+def tobler_speed_kmh(
+    slope: float,
+    walk_type: str,
+    base_speed_kmh: float = DEFAULT_BASE_WALK_SPEED_KMH,
+) -> float:
+    base_speed_kmh = sanitize_base_walk_speed_kmh(base_speed_kmh)
+    speed = base_speed_kmh * math.exp(-3.5 * abs(slope + 0.05))
     speed *= WALK_TYPE_FACTORS.get(walk_type, 1.0)
-    return max(1.0, min(speed, 6.0))
+    return max(0.5, min(speed, base_speed_kmh * 1.05))
+
+
+def is_shuttle_edge(data: dict[str, Any]) -> bool:
+    return classify_walk_type(data) in SHUTTLE_WALK_TYPES or str(data.get("source", "")) == "snu_shuttle"
+
+
+def is_fixed_time_edge(data: dict[str, Any]) -> bool:
+    walk_type = classify_walk_type(data)
+    return walk_type in FIXED_TIME_WALK_TYPES or str(data.get("source", "")) == "building_internal"
+
+
+def is_outdoor_walk_edge(data: dict[str, Any]) -> bool:
+    return not is_fixed_time_edge(data)
+
+
+def edge_travel_time_sec(data: dict[str, Any], base_walk_speed_kmh: float | None = None) -> float:
+    time_sec = as_float(data.get("time_sec"), math.inf)
+    if not math.isfinite(time_sec):
+        return math.inf
+    if time_sec < 0:
+        return math.inf
+    if not is_outdoor_walk_edge(data):
+        return max(time_sec, MIN_EDGE_TIME_SEC)
+
+    reference_speed = as_float(data.get("base_walk_speed_kmh"), DEFAULT_BASE_WALK_SPEED_KMH)
+    if not math.isfinite(reference_speed) or reference_speed <= 0:
+        reference_speed = DEFAULT_BASE_WALK_SPEED_KMH
+    requested_speed = sanitize_base_walk_speed_kmh(base_walk_speed_kmh)
+    return max(time_sec * reference_speed / requested_speed, MIN_EDGE_TIME_SEC)
+
+
+def multiedge_bundle(data: dict[str, Any]) -> bool:
+    return bool(data) and all(isinstance(value, dict) for value in data.values())
+
+
+def dijkstra_weight(
+    base_walk_speed_kmh: float | None = None,
+    allow_shuttle: bool = True,
+):
+    def weight(_: Any, __: Any, data: dict[str, Any]) -> float | None:
+        if multiedge_bundle(data):
+            weights = [
+                edge_travel_time_sec(edge_data, base_walk_speed_kmh)
+                for edge_data in data.values()
+                if allow_shuttle or not is_shuttle_edge(edge_data)
+            ]
+            return min(weights) if weights else None
+
+        if not allow_shuttle and is_shuttle_edge(data):
+            return None
+        return edge_travel_time_sec(data, base_walk_speed_kmh)
+
+    return weight
 
 
 def edge_geometry(G: nx.MultiDiGraph, u: Any, v: Any, data: dict[str, Any]) -> LineString:
@@ -146,16 +239,22 @@ def add_time_weights(G: nx.MultiDiGraph, recompute: bool = False) -> nx.MultiDiG
             length_m = line_length_m(geometry)
 
         current_time = as_float(data.get("time_sec"), math.nan)
+        walk_type = classify_walk_type(data)
+        if is_fixed_time_edge(data) and math.isfinite(current_time) and current_time >= 0:
+            data["length"] = length_m
+            data["walk_type"] = walk_type
+            data["time_sec"] = round(max(current_time, MIN_EDGE_TIME_SEC), 2)
+            continue
+
         if not recompute and math.isfinite(current_time) and current_time > 0:
             data["length"] = length_m
-            data["walk_type"] = classify_walk_type(data)
+            data["walk_type"] = walk_type
             data["time_sec"] = current_time
             continue
 
         elevation_u = as_float(G.nodes[u].get("elevation_m"))
         elevation_v = as_float(G.nodes[v].get("elevation_m"))
         slope = (elevation_v - elevation_u) / length_m if length_m > 0 else 0.0
-        walk_type = classify_walk_type(data)
         speed_kmh = tobler_speed_kmh(slope, walk_type)
         speed_mps = speed_kmh * 1000 / 3600
         time_sec = length_m / speed_mps if speed_mps > 0 else math.inf
@@ -166,6 +265,8 @@ def add_time_weights(G: nx.MultiDiGraph, recompute: bool = False) -> nx.MultiDiG
         data["grade_abs"] = round(abs(slope), 6)
         data["speed_kmh"] = round(speed_kmh, 4)
         data["time_sec"] = round(time_sec, 2)
+        data["default_time_sec"] = round(time_sec, 2)
+        data["base_walk_speed_kmh"] = DEFAULT_BASE_WALK_SPEED_KMH
 
     return G
 
@@ -178,51 +279,155 @@ def graph_needs_time_weights(G: nx.MultiDiGraph) -> bool:
     return False
 
 
-def shortest_time_route(G: nx.MultiDiGraph, start_node: Any, end_node: Any) -> tuple[list[Any], dict[str, Any]]:
+def shortest_time_route(
+    G: nx.MultiDiGraph,
+    start_node: Any,
+    end_node: Any,
+    base_walk_speed_kmh: float | None = None,
+    allow_shuttle: bool = True,
+) -> tuple[list[Any], dict[str, Any]]:
+    base_walk_speed_kmh = sanitize_base_walk_speed_kmh(base_walk_speed_kmh)
     try:
-        route = nx.shortest_path(G, start_node, end_node, weight="time_sec")
+        route = nx.shortest_path(
+            G,
+            start_node,
+            end_node,
+            weight=dijkstra_weight(base_walk_speed_kmh, allow_shuttle),
+        )
     except (nx.NetworkXNoPath, nx.NodeNotFound) as exc:
         raise RouteNotFound(str(exc)) from exc
 
     total_time = 0.0
     total_length = 0.0
+    walking_length = 0.0
+    shuttle_length = 0.0
+    outdoor_walk_time = 0.0
+    building_internal_time = 0.0
+    shuttle_wait_time = 0.0
+    shuttle_ride_time = 0.0
+    shuttle_dwell_time = 0.0
     total_ascent = 0.0
     total_descent = 0.0
 
     for u, v in zip(route[:-1], route[1:], strict=True):
-        data = fastest_edge_data(G, u, v)
+        data = fastest_edge_data(G, u, v, base_walk_speed_kmh, allow_shuttle)
         elevation_u = as_float(G.nodes[u].get("elevation_m"))
         elevation_v = as_float(G.nodes[v].get("elevation_m"))
         delta = elevation_v - elevation_u
-        total_ascent += max(delta, 0.0)
-        total_descent += max(-delta, 0.0)
-        total_time += as_float(data.get("time_sec"))
-        total_length += as_float(data.get("length"))
+        walk_type = classify_walk_type(data)
+        edge_time = edge_travel_time_sec(data, base_walk_speed_kmh)
+        edge_length = as_float(data.get("length"))
+
+        total_time += edge_time
+        total_length += edge_length
+        if walk_type == "shuttle_wait":
+            shuttle_wait_time += edge_time
+        elif walk_type == "shuttle_ride":
+            shuttle_ride_time += edge_time
+            shuttle_length += edge_length
+        elif walk_type == "shuttle_dwell":
+            shuttle_dwell_time += edge_time
+        elif walk_type == "shuttle_alight":
+            pass
+        elif walk_type == "building_internal":
+            building_internal_time += edge_time
+            walking_length += edge_length
+            total_ascent += max(delta, 0.0)
+            total_descent += max(-delta, 0.0)
+        else:
+            outdoor_walk_time += edge_time
+            walking_length += edge_length
+            total_ascent += max(delta, 0.0)
+            total_descent += max(-delta, 0.0)
 
     summary = {
         "start_node": json_safe(start_node),
         "end_node": json_safe(end_node),
         "total_length_m": round(total_length, 1),
+        "walking_length_m": round(walking_length, 1),
+        "shuttle_length_m": round(shuttle_length, 1),
         "total_time_sec": round(total_time, 1),
         "total_time_min": round(total_time / 60, 2),
+        "outdoor_walk_time_sec": round(outdoor_walk_time, 1),
+        "building_internal_time_sec": round(building_internal_time, 1),
+        "shuttle_wait_time_sec": round(shuttle_wait_time, 1),
+        "shuttle_ride_time_sec": round(shuttle_ride_time, 1),
+        "shuttle_dwell_time_sec": round(shuttle_dwell_time, 1),
+        "shuttle_time_sec": round(shuttle_wait_time + shuttle_ride_time + shuttle_dwell_time, 1),
+        "uses_shuttle": (shuttle_wait_time + shuttle_ride_time + shuttle_dwell_time) > 0,
+        "base_walk_speed_kmh": round(base_walk_speed_kmh, 2),
         "total_ascent_m": round(total_ascent, 1),
         "total_descent_m": round(total_descent, 1),
     }
     return route, summary
 
 
-def fastest_edge_data(G: nx.MultiDiGraph, u: Any, v: Any) -> dict[str, Any]:
+def fastest_edge_data(
+    G: nx.MultiDiGraph,
+    u: Any,
+    v: Any,
+    base_walk_speed_kmh: float | None = None,
+    allow_shuttle: bool = True,
+) -> dict[str, Any]:
     candidates = G.get_edge_data(u, v)
     if not candidates:
         raise RouteNotFound(f"No edge data for {u!r} -> {v!r}")
-    _, data = min(candidates.items(), key=lambda item: as_float(item[1].get("time_sec"), math.inf))
+    eligible = [
+        (key, data)
+        for key, data in candidates.items()
+        if allow_shuttle or not is_shuttle_edge(data)
+    ]
+    if not eligible:
+        raise RouteNotFound(f"No eligible edge data for {u!r} -> {v!r}")
+    _, data = min(eligible, key=lambda item: edge_travel_time_sec(item[1], base_walk_speed_kmh))
     return data
 
 
-def route_geojson(G: nx.MultiDiGraph, route: list[Any], summary: dict[str, Any]) -> dict[str, Any]:
+def calibrate_base_walk_speed(
+    G: nx.MultiDiGraph,
+    start_node: Any,
+    end_node: Any,
+    actual_time_sec: float,
+) -> dict[str, Any]:
+    if actual_time_sec <= 0:
+        raise ValueError("Calibration time must be positive.")
+
+    _, summary = shortest_time_route(
+        G,
+        start_node,
+        end_node,
+        base_walk_speed_kmh=DEFAULT_BASE_WALK_SPEED_KMH,
+        allow_shuttle=False,
+    )
+    scalable_time = as_float(summary.get("outdoor_walk_time_sec"))
+    fixed_time = as_float(summary.get("total_time_sec")) - scalable_time
+    actual_scalable_time = actual_time_sec - fixed_time
+    if scalable_time <= 0 or actual_scalable_time <= 0:
+        raise ValueError("Calibration route does not contain enough outdoor walking time.")
+
+    raw_speed = DEFAULT_BASE_WALK_SPEED_KMH * scalable_time / actual_scalable_time
+    calibrated_speed = sanitize_base_walk_speed_kmh(raw_speed)
+    return {
+        "calibrated_base_walk_speed_kmh": round(calibrated_speed, 2),
+        "raw_calibrated_base_walk_speed_kmh": round(raw_speed, 2),
+        "calibration_clamped": abs(calibrated_speed - raw_speed) > 1e-6,
+        "calibration_actual_time_sec": round(actual_time_sec, 1),
+        "calibration_default_time_sec": summary["total_time_sec"],
+        "calibration_fixed_time_sec": round(fixed_time, 1),
+        "calibration_outdoor_default_time_sec": round(scalable_time, 1),
+    }
+
+
+def route_geojson(
+    G: nx.MultiDiGraph,
+    route: list[Any],
+    summary: dict[str, Any],
+    base_walk_speed_kmh: float | None = None,
+    allow_shuttle: bool = True,
+) -> dict[str, Any]:
     coordinates: list[list[float]] = []
     for u, v in zip(route[:-1], route[1:], strict=True):
-        data = fastest_edge_data(G, u, v)
+        data = fastest_edge_data(G, u, v, base_walk_speed_kmh, allow_shuttle)
         segment = [[float(lon), float(lat)] for lon, lat in edge_geometry(G, u, v, data).coords]
         if coordinates and segment and coordinates[-1] == segment[0]:
             coordinates.extend(segment[1:])

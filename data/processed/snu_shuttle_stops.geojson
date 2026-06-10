@@ -1,0 +1,427 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 1,
+        "route_stop_name": "정문",
+        "snu_station_code": "100",
+        "official_name": "정문",
+        "official_title": "정문 (1B)",
+        "station_short_code": "1B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_01_100",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.948658484027,
+          37.4652425830942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 2,
+        "route_stop_name": "법과대",
+        "snu_station_code": "200",
+        "official_name": "법대입구",
+        "official_title": "법대입구 (2B)",
+        "station_short_code": "2B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_02_200",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.949058246856,
+          37.4633168440356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 3,
+        "route_stop_name": "자연대",
+        "snu_station_code": "400",
+        "official_name": "자연대500동(행정관)",
+        "official_title": "자연대500동(행정관) (4B)",
+        "station_short_code": "4B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_03_400",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.948998215353,
+          37.4601700341486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 4,
+        "route_stop_name": "농생대",
+        "snu_station_code": "500",
+        "official_name": "농생대",
+        "official_title": "농생대 (5B)",
+        "station_short_code": "5B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_04_500",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.949325181744,
+          37.4571968340526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 5,
+        "route_stop_name": "38동",
+        "snu_station_code": "2129200",
+        "official_name": "38동",
+        "official_title": "38동 (21292B)",
+        "station_short_code": "21292B",
+        "transport_types": [
+          "셔틀버스"
+        ],
+        "coordinate_source": "osm_bus_stop_공대입구_21292_fallback",
+        "has_coordinate": true,
+        "note": "SNU official stationMap returns 0,0 for 38동 (21292B); using nearby OSM 공대입구/ARS 21292 coordinate.",
+        "node_id": "shuttle_stop_05_2129200",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.9497691,
+          37.4549653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 6,
+        "route_stop_name": "신소재공동연구소",
+        "snu_station_code": "701",
+        "official_name": "신소재연구소",
+        "official_title": "신소재연구소 (7A)",
+        "station_short_code": "7A",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선",
+          "마을버스"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_06_701",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.950220492609,
+          37.4535571226189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 7,
+        "route_stop_name": "302동",
+        "snu_station_code": "900",
+        "official_name": "302동 공학관",
+        "official_title": "302동 공학관 (9B)",
+        "station_short_code": "9B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_07_900",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.952017643105,
+          37.4489176464128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 8,
+        "route_stop_name": "301동",
+        "snu_station_code": "1000",
+        "official_name": "301동 공학관",
+        "official_title": "301동 공학관 (10B)",
+        "station_short_code": "10B",
+        "transport_types": [
+          "셔틀버스",
+          "마을버스"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_08_1000",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.951849,
+          37.449935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 9,
+        "route_stop_name": "유전공학연구소",
+        "snu_station_code": "1101",
+        "official_name": "유전공학연구소",
+        "official_title": "유전공학연구소 (11A)",
+        "station_short_code": "11A",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선",
+          "마을버스"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_09_1101",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.953938443076,
+          37.4542028545218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 10,
+        "route_stop_name": "교수회관",
+        "snu_station_code": "1301",
+        "official_name": "교수회관입구",
+        "official_title": "교수회관입구 (13A)",
+        "station_short_code": "13A",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선",
+          "마을버스"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_10_1301",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.955245592118,
+          37.455989614862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 11,
+        "route_stop_name": "기숙사삼거리",
+        "snu_station_code": "1500",
+        "official_name": "기숙사삼거리",
+        "official_title": "기숙사삼거리 (15B)",
+        "station_short_code": "15B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선",
+          "마을버스"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_11_1500",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.956732033028,
+          37.4605740691884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 12,
+        "route_stop_name": "국제대학원",
+        "snu_station_code": "1600",
+        "official_name": "국제대학원",
+        "official_title": "국제대학원 (16B)",
+        "station_short_code": "16B",
+        "transport_types": [
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_12_1600",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.95493582415,
+          37.4636638685133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 13,
+        "route_stop_name": "수의대",
+        "snu_station_code": "1700",
+        "official_name": "수의대입구",
+        "official_title": "수의대입구 (17B)",
+        "station_short_code": "17B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_13_1700",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.954600918133,
+          37.4660671882958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 14,
+        "route_stop_name": "경영대",
+        "snu_station_code": "1800",
+        "official_name": "경영대",
+        "official_title": "경영대 (18B)",
+        "station_short_code": "18B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_14_1800",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.950896155147,
+          37.4659553330316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sequence": 15,
+        "route_stop_name": "정문",
+        "snu_station_code": "100",
+        "official_name": "정문",
+        "official_title": "정문 (1B)",
+        "station_short_code": "1B",
+        "transport_types": [
+          "셔틀버스",
+          "시내버스-간선"
+        ],
+        "coordinate_source": "snu_shuttle_stationMap",
+        "has_coordinate": true,
+        "note": null,
+        "node_id": "shuttle_stop_15_100",
+        "source": "snu_shuttle",
+        "feature_id": "snu_circular_shuttle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.948658484027,
+          37.4652425830942
+        ]
+      }
+    }
+  ]
+}

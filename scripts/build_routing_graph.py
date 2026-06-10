@@ -14,6 +14,7 @@ import networkx as nx
 import osmnx as ox
 from pyproj import Transformer
 from shapely.geometry import LineString, Point
+from shapely.ops import nearest_points
 
 from app.routing import MIN_EDGE_TIME_SEC, add_time_weights, edge_geometry, normalize_graph_values
 
@@ -55,6 +56,11 @@ EXACT_DUPLICATE_HAUSDORFF_M = 0.25
 EXACT_DUPLICATE_LENGTH_DELTA_M = 1.0
 NEAR_DUPLICATE_DISTANCE_M = 0.75
 NEAR_DUPLICATE_COVERAGE = 0.9
+AUTO_STITCH_MAX_COMPONENT_SIZE = 12
+AUTO_STITCH_MAX_DISTANCE_M = 8.0
+AUTO_STITCH_NODE_BASE = -700000
+AUTO_STITCH_FEATURE_ID = "auto_component_stitch"
+AUTO_STITCH_WALK_TYPE = "entrance_connector"
 WALK_TYPE_PRIORITY = {
     "pedestrian": 0,
     "footway": 1,
@@ -856,6 +862,172 @@ def split_registered_edges(
     }
 
 
+def is_auto_stitch_candidate_edge(data: dict[str, Any]) -> bool:
+    if data.get("source") in {"building_internal", "snu_shuttle"}:
+        return False
+    return str(data.get("walk_type", "footway")) not in {
+        "building_internal",
+        "shuttle_wait",
+        "shuttle_ride",
+        "shuttle_dwell",
+        "shuttle_alight",
+    }
+
+
+def split_node_for_edge_distance(
+    G: nx.MultiDiGraph,
+    split_registry: dict[tuple[Any, Any, Any], list[dict[str, Any]]],
+    u: Any,
+    v: Any,
+    key: Any,
+    data: dict[str, Any],
+    distance_m: float,
+    node_id: Any,
+) -> Any:
+    line_utm = projected_edge_geometry(G, u, v, data)
+    edge_length = line_utm.length
+    if edge_length <= 0:
+        return u
+
+    distance_m = max(0.0, min(edge_length, distance_m))
+    if distance_m <= SNAP_DISTANCE_EPSILON_M:
+        return u
+    if distance_m >= edge_length - SNAP_DISTANCE_EPSILON_M:
+        return v
+
+    ratio = distance_m / edge_length
+    point_utm = line_utm.interpolate(distance_m)
+    lon, lat = FROM_UTM.transform(point_utm.x, point_utm.y)
+
+    if node_id not in G:
+        G.add_node(
+            node_id,
+            x=float(lon),
+            y=float(lat),
+            geometry=Point(float(lon), float(lat)),
+            elevation_m=float(interpolate_elevation(G, u, v, ratio)),
+            name="Auto component stitch",
+            feature_id=AUTO_STITCH_FEATURE_ID,
+            source="manual",
+        )
+
+    register_edge_split(
+        G,
+        split_registry,
+        u,
+        v,
+        key,
+        data,
+        edge_geometry(G, u, v, data),
+        node_id,
+        ratio,
+        AUTO_STITCH_FEATURE_ID,
+    )
+    return node_id
+
+
+def repair_small_disconnected_components(G: nx.MultiDiGraph) -> dict[str, int | float]:
+    components = sorted(nx.connected_components(G.to_undirected()), key=len, reverse=True)
+    if len(components) <= 1:
+        return {
+            "auto_stitch_components_before": len(components),
+            "auto_stitch_components_connected": 0,
+            "auto_stitch_connector_edges": 0,
+            "auto_stitch_split_original_edges_removed": 0,
+            "auto_stitch_split_edges_added": 0,
+            "auto_stitch_max_distance_m": AUTO_STITCH_MAX_DISTANCE_M,
+        }
+
+    main_component = set(components[0])
+    split_registry: dict[tuple[Any, Any, Any], list[dict[str, Any]]] = {}
+    connected_components = 0
+    connector_edges = 0
+
+    main_edges = [
+        (u, v, key, data, projected_edge_geometry(G, u, v, data))
+        for u, v, key, data in G.edges(keys=True, data=True)
+        if u in main_component and v in main_component and is_auto_stitch_candidate_edge(data)
+    ]
+
+    for component_index, component in enumerate(components[1:], start=1):
+        if len(component) > AUTO_STITCH_MAX_COMPONENT_SIZE:
+            continue
+
+        component_edges = [
+            (u, v, key, data, projected_edge_geometry(G, u, v, data))
+            for u, v, key, data in G.edges(keys=True, data=True)
+            if u in component and v in component and is_auto_stitch_candidate_edge(data)
+        ]
+        if not component_edges:
+            continue
+
+        best: tuple[
+            float,
+            tuple[Any, Any, Any, dict[str, Any], LineString],
+            tuple[Any, Any, Any, dict[str, Any], LineString],
+        ] | None = None
+        for component_edge in component_edges:
+            for main_edge in main_edges:
+                distance = component_edge[4].distance(main_edge[4])
+                if distance > AUTO_STITCH_MAX_DISTANCE_M:
+                    continue
+                if best is None or distance < best[0]:
+                    best = (distance, component_edge, main_edge)
+
+        if best is None:
+            continue
+
+        distance, component_edge, main_edge = best
+        component_point, main_point = nearest_points(component_edge[4], main_edge[4])
+        component_distance = component_edge[4].project(component_point)
+        main_distance = main_edge[4].project(main_point)
+
+        component_node = split_node_for_edge_distance(
+            G,
+            split_registry,
+            component_edge[0],
+            component_edge[1],
+            component_edge[2],
+            component_edge[3],
+            component_distance,
+            AUTO_STITCH_NODE_BASE - component_index * 10 - 1,
+        )
+        main_node = split_node_for_edge_distance(
+            G,
+            split_registry,
+            main_edge[0],
+            main_edge[1],
+            main_edge[2],
+            main_edge[3],
+            main_distance,
+            AUTO_STITCH_NODE_BASE - component_index * 10 - 2,
+        )
+
+        if component_node == main_node:
+            continue
+
+        connector_edges += add_edge(
+            G,
+            component_node,
+            main_node,
+            AUTO_STITCH_WALK_TYPE,
+            AUTO_STITCH_FEATURE_ID,
+            source="manual",
+        )
+        connected_components += 1
+        main_component.update(component)
+
+    split_stats = split_registered_edges(G, split_registry)
+    return {
+        "auto_stitch_components_before": len(components),
+        "auto_stitch_components_connected": connected_components,
+        "auto_stitch_connector_edges": connector_edges,
+        "auto_stitch_split_original_edges_removed": split_stats["split_original_edges_removed"],
+        "auto_stitch_split_edges_added": split_stats["split_edges_added"],
+        "auto_stitch_max_distance_m": AUTO_STITCH_MAX_DISTANCE_M,
+    }
+
+
 def add_snap_connection(
     G: nx.MultiDiGraph,
     node_id: Any,
@@ -1353,6 +1525,7 @@ def main() -> None:
         shuttle_split_registry,
     )
     shuttle_split_stats = split_registered_edges(graph, shuttle_split_registry)
+    auto_stitch_stats = repair_small_disconnected_components(graph)
     add_time_weights(graph, recompute=True)
     building_internal_stats = add_building_internal_edges(
         graph,
@@ -1382,6 +1555,7 @@ def main() -> None:
         **manual_stats,
         **entrance_stats,
         **{f"shuttle_{key}": value for key, value in shuttle_split_stats.items()},
+        **auto_stitch_stats,
         **shuttle_stop_stats,
         **building_internal_stats,
         **shuttle_transit_stats,

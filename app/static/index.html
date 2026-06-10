@@ -43,6 +43,25 @@
           <button id="resetButton" type="button">초기화</button>
         </div>
 
+        <section class="profile" aria-label="이동 프로필">
+          <div class="profile-row">
+            <span>기본속도</span>
+            <strong id="speedText">6.0 km/h</strong>
+          </div>
+          <label class="toggle-row">
+            <input id="allowShuttleInput" type="checkbox" checked />
+            <span>셔틀 포함</span>
+          </label>
+          <label class="input-row">
+            <span>실측 시간</span>
+            <input id="calibrationInput" type="number" min="0.1" step="0.1" placeholder="분" />
+          </label>
+          <div class="profile-actions">
+            <button id="calibrateButton" type="button" disabled>속도 보정</button>
+            <button id="clearSpeedButton" type="button">기본값</button>
+          </div>
+        </section>
+
         <section id="summaryPanel" class="summary" hidden>
           <div>
             <span>예상 시간</span>
@@ -70,6 +89,7 @@
           <label><input type="checkbox" data-layer="entrances" /> 건물 입구</label>
           <label><input type="checkbox" data-layer="elevation_nodes" /> 고도 노드</label>
           <label><input type="checkbox" data-layer="manual_features" /> 수동 보정 구간</label>
+          <label><input type="checkbox" data-layer="shuttle_features" checked /> 셔틀 정류장</label>
         </section>
       </aside>
     </main>

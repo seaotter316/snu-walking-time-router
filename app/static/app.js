@@ -1,6 +1,8 @@
 const SNU_CENTER = [37.4601, 126.9512];
 const SNAP_WARNING_M = 35;
 const POINT_RADIUS = window.matchMedia("(pointer: coarse)").matches ? 7 : 6;
+const DEFAULT_BASE_WALK_SPEED_KMH = 6.0;
+const SPEED_STORAGE_KEY = "snu.baseWalkSpeedKmh";
 
 const state = {
   start: null,
@@ -10,6 +12,7 @@ const state = {
   routeLayer: null,
   layers: new Map(),
   layerData: new Map(),
+  baseWalkSpeedKmh: loadStoredSpeed(),
 };
 
 const map = L.map("map", {
@@ -32,6 +35,11 @@ const elements = {
   endText: document.getElementById("endText"),
   routeButton: document.getElementById("routeButton"),
   resetButton: document.getElementById("resetButton"),
+  speedText: document.getElementById("speedText"),
+  allowShuttleInput: document.getElementById("allowShuttleInput"),
+  calibrationInput: document.getElementById("calibrationInput"),
+  calibrateButton: document.getElementById("calibrateButton"),
+  clearSpeedButton: document.getElementById("clearSpeedButton"),
   summaryPanel: document.getElementById("summaryPanel"),
   timeValue: document.getElementById("timeValue"),
   distanceValue: document.getElementById("distanceValue"),
@@ -58,8 +66,12 @@ map.on("click", (event) => {
 
 elements.routeButton.addEventListener("click", findRoute);
 elements.resetButton.addEventListener("click", resetSelection);
+elements.calibrateButton.addEventListener("click", calibrateSpeed);
+elements.clearSpeedButton.addEventListener("click", clearSpeedProfile);
+elements.calibrationInput.addEventListener("input", updatePointText);
 
 initializeLayerToggles();
+renderSpeedProfile();
 
 function createMapPanes() {
   const panes = [
@@ -150,6 +162,7 @@ function updatePointText() {
   elements.startText.textContent = state.start ? formatLatLng(state.start) : "미선택";
   elements.endText.textContent = state.end ? formatLatLng(state.end) : "미선택";
   elements.routeButton.disabled = !(state.start && state.end);
+  elements.calibrateButton.disabled = !(state.start && state.end && calibrationTimeSec());
 }
 
 function formatLatLng(latlng) {
@@ -163,16 +176,7 @@ async function findRoute() {
   setStatus("계산 중...");
 
   try {
-    const response = await fetch("/api/route", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        start_lon: state.start.lng,
-        start_lat: state.start.lat,
-        end_lon: state.end.lng,
-        end_lat: state.end.lat,
-      }),
-    });
+    const response = await routeRequest();
 
     const data = await response.json();
     if (!response.ok) {
@@ -181,7 +185,7 @@ async function findRoute() {
 
     drawRoute(data.route_geojson, data.summary);
     renderSummary(data.summary);
-    setStatus("최단시간 경로");
+    setRouteStatus(data.summary);
   } catch (error) {
     clearRoute();
     elements.summaryPanel.hidden = true;
@@ -189,6 +193,84 @@ async function findRoute() {
   } finally {
     elements.routeButton.disabled = !(state.start && state.end);
   }
+}
+
+async function calibrateSpeed() {
+  if (!state.start || !state.end) return;
+  const actualTimeSec = calibrationTimeSec();
+  if (!actualTimeSec) {
+    setStatus("실측 시간을 입력하세요.");
+    return;
+  }
+
+  elements.calibrateButton.disabled = true;
+  setStatus("속도 보정 중...");
+
+  try {
+    const response = await routeRequest({ calibration_actual_time_sec: actualTimeSec });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || "속도 보정에 실패했습니다.");
+    }
+
+    const calibrated = Number(data.summary?.calibrated_base_walk_speed_kmh);
+    if (Number.isFinite(calibrated)) {
+      state.baseWalkSpeedKmh = calibrated;
+      localStorage.setItem(SPEED_STORAGE_KEY, String(calibrated));
+      renderSpeedProfile();
+    }
+
+    drawRoute(data.route_geojson, data.summary);
+    renderSummary(data.summary);
+    setRouteStatus(data.summary, "보정된 속도 적용");
+  } catch (error) {
+    setStatus(error.message);
+  } finally {
+    updatePointText();
+  }
+}
+
+async function routeRequest(extra = {}) {
+  const body = {
+    start_lon: state.start.lng,
+    start_lat: state.start.lat,
+    end_lon: state.end.lng,
+    end_lat: state.end.lat,
+    allow_shuttle: elements.allowShuttleInput.checked,
+    ...extra,
+  };
+  if (state.baseWalkSpeedKmh) {
+    body.base_walk_speed_kmh = state.baseWalkSpeedKmh;
+  }
+
+  return fetch("/api/route", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+}
+
+function calibrationTimeSec() {
+  const minutes = Number(elements.calibrationInput.value);
+  if (!Number.isFinite(minutes) || minutes <= 0) return null;
+  return minutes * 60;
+}
+
+function loadStoredSpeed() {
+  const value = Number(localStorage.getItem(SPEED_STORAGE_KEY));
+  return Number.isFinite(value) && value > 0 ? value : null;
+}
+
+function renderSpeedProfile() {
+  const speed = state.baseWalkSpeedKmh || DEFAULT_BASE_WALK_SPEED_KMH;
+  elements.speedText.textContent = `${speed.toFixed(1)} km/h`;
+}
+
+function clearSpeedProfile() {
+  state.baseWalkSpeedKmh = null;
+  localStorage.removeItem(SPEED_STORAGE_KEY);
+  renderSpeedProfile();
+  setStatus("기본속도 적용");
 }
 
 function drawRoute(geojson, summary) {
@@ -248,6 +330,17 @@ function renderSummary(summary) {
     elements.snapWarning.hidden = true;
     elements.snapWarning.textContent = "";
   }
+
+}
+
+function setRouteStatus(summary, prefix = "최단시간 경로") {
+  if (summary.uses_shuttle) {
+    const waitMin = (summary.shuttle_wait_time_sec / 60).toFixed(1);
+    const rideMin = ((summary.shuttle_ride_time_sec + summary.shuttle_dwell_time_sec) / 60).toFixed(1);
+    setStatus(`${prefix} · 셔틀 대기 ${waitMin}분 / 탑승 ${rideMin}분`);
+    return;
+  }
+  setStatus(prefix);
 }
 
 function resetSelection() {
@@ -419,6 +512,38 @@ function createLayer(layerName, data) {
     });
 
     return L.layerGroup([areaLayer, edgeLayer, nodeLayer]);
+  }
+
+  if (layerName === "shuttle_features") {
+    const rideLayer = L.geoJSON(data, {
+      pane: "edgePane",
+      interactive: false,
+      filter: (feature) => feature.properties?.kind === "ride",
+      style: {
+        color: "#7c3aed",
+        weight: 3,
+        opacity: 0.78,
+      },
+    });
+
+    const stopLayer = L.geoJSON(data, {
+      pane: "pointPane",
+      filter: (feature) => feature.properties?.kind === "stop",
+      pointToLayer: (feature, latlng) =>
+        L.circleMarker(latlng, {
+          pane: "pointPane",
+          radius: POINT_RADIUS + 1,
+          color: "#6d28d9",
+          weight: 2,
+          fillColor: "#a855f7",
+          fillOpacity: 0.92,
+          bubblingMouseEvents: false,
+        })
+          .bindTooltip(feature.properties?.name || "셔틀 정류장", { sticky: true })
+          .bindPopup(feature.properties?.name || "셔틀 정류장"),
+    });
+
+    return L.layerGroup([rideLayer, stopLayer]);
   }
 
   return L.geoJSON(data);

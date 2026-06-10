@@ -260,10 +260,12 @@ end_snap_distance_m
 Windows PowerShell 기준입니다.
 
 ```powershell
-python -m venv venv
+py -m venv venv
 venv\Scripts\python.exe -m pip install -r requirements.txt
 venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
+
+`py` 명령을 사용할 수 없는 환경에서는 설치된 Python 실행 파일로 `python -m venv venv`를 실행합니다.
 
 브라우저에서 다음 주소를 엽니다.
 
@@ -338,11 +340,11 @@ venv\Scripts\python.exe -m scripts.create_full_map
 
 최근 `scripts.build_routing_graph` 실행 결과입니다.
 
-- 최종 그래프: 노드 1480개, 방향 엣지 4778개
+- 최종 그래프: 노드 1502개, 방향 엣지 5188개
 - 셔틀 정류장 노드: 14개
 - 셔틀 상태 노드: 28개
 - 셔틀 탑승/하차/정차/주행 엣지: 56개
-- 건물 내부 엣지: 986개
+- 건물 내부 엣지: 1232개
 - 수동 보정 노드: 165개
 - 수동 직접 엣지: 82개
 - 광장 내부 연결 엣지: 462개
@@ -372,4 +374,4 @@ venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 ## License
 
-코드와 데이터 사용 조건은 별도 정리가 필요합니다. OpenStreetMap 기반 데이터는 OSM 라이선스와 기여자 표기 조건을 따라야 합니다.
+코드의 라이선스는 별도 배포 전 확정이 필요합니다. OpenStreetMap 기반 데이터와 지도 타일은 OpenStreetMap 기여자 표기 및 ODbL 조건을 따라야 하며, 앱 화면의 Leaflet 기본 타일 레이어에도 OpenStreetMap attribution을 표시합니다.

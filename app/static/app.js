@@ -337,7 +337,6 @@ function handleRouteOptionChange() {
 function drawRoute(geojson, summary) {
   clearRoute();
   const routeCoords = routeCoordinatesFromGeoJson(geojson);
-  console.info(`[route] coordinate count=${routeCoords.length}; Leaflet order=[lat, lon]`, routeCoords[0]);
 
   state.routeLayer = L.polyline(routeCoords, {
     pane: "routePane",
@@ -363,7 +362,6 @@ function drawRoute(geojson, summary) {
 function routeCoordinatesFromGeoJson(geojson) {
   const feature = geojson?.features?.[0];
   const coords = feature?.geometry?.coordinates || [];
-  console.info("[route] GeoJSON sample order=[lon, lat]", coords[0]);
   return coords.map(([lon, lat]) => [lat, lon]);
 }
 
@@ -475,23 +473,7 @@ async function loadLayerData(layerName) {
 
   const data = await response.json();
   state.layerData.set(layerName, data);
-  logGeoJsonLoad(layerName, data);
   return data;
-}
-
-function logGeoJsonLoad(layerName, data) {
-  const featureCount = data?.features?.length || 0;
-  const sample = firstCoordinate(data?.features?.[0]?.geometry);
-  console.info(`[layer:${layerName}] loaded features=${featureCount}; GeoJSON sample order=[lon, lat]`, sample);
-}
-
-function firstCoordinate(geometry) {
-  if (!geometry) return null;
-  if (geometry.type === "Point") return geometry.coordinates;
-  if (geometry.type === "LineString") return geometry.coordinates?.[0] || null;
-  if (geometry.type === "Polygon") return geometry.coordinates?.[0]?.[0] || null;
-  if (geometry.type === "MultiPolygon") return geometry.coordinates?.[0]?.[0]?.[0] || null;
-  return null;
 }
 
 function createLayer(layerName, data) {

@@ -5,3 +5,9 @@ folium
 requests
 fastapi
 uvicorn
+pydantic
+pyproj
+shapely
+numpy
+opencv-python
+Pillow

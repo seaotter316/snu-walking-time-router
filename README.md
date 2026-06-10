@@ -117,10 +117,19 @@ building_internal_time_sec =
 
 - `measured_data/배차간격_측정.csv`
   - 평균 배차간격: 391.09초
-  - Osuna-Newell 보정 기대 대기시간: 198.87초
+  - 불규칙 배차를 고려한 기대 대기시간: 198.87초
 - `measured_data/셔틀_데이터_정리.xlsx`
   - 정류장별 정차시간
   - 구간별 주행시간
+
+대기시간은 Osuna and Newell(1972)의 논문 *Control Strategies for an Idealized Public Transportation System*에서 사용하는 무작위 도착 승객의 평균 대기시간 관계를 참고합니다. 승객이 셔틀 도착 시각과 독립적으로 정류장에 도착한다고 보면, 배차간격 `H`에 대한 기대 대기시간은 다음과 같습니다.
+
+```text
+E[W] = E[H^2] / (2E[H])
+     = E[H] / 2 + Var(H) / (2E[H])
+```
+
+배차간격이 완전히 일정하면 `E[H] / 2`와 같지만, 실제 배차간격의 분산이 있으면 평균 대기시간이 더 커질 수 있습니다. 따라서 본 프로젝트에서는 `배차간격_측정.csv`의 실측 배차간격으로 위 값을 계산해 `shuttle_wait`의 기대 대기시간으로 사용합니다.
 
 셔틀 엣지는 다음 네 가지 `walk_type`으로 나뉩니다.
 

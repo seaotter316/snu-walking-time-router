@@ -8,12 +8,12 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
-    <link rel="stylesheet" href="/static/style.css?v=2" />
+    <link rel="stylesheet" href="/static/style.css?v=3" />
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       defer
     ></script>
-    <script src="/static/app.js?v=2" defer></script>
+    <script src="/static/app.js?v=3" defer></script>
   </head>
   <body>
     <main class="app-shell">
@@ -24,6 +24,15 @@
           <h1>서울대 도보 시간</h1>
           <p id="statusText">출발지를 선택하세요.</p>
         </header>
+
+        <section class="selection-mode" aria-label="지도 클릭 대상 선택">
+          <button id="selectStartButton" class="mode-button active" type="button" aria-pressed="true">
+            출발 선택
+          </button>
+          <button id="selectEndButton" class="mode-button" type="button" aria-pressed="false">
+            도착 선택
+          </button>
+        </section>
 
         <section class="point-list" aria-label="선택 좌표">
           <div class="point-row">
@@ -45,7 +54,7 @@
 
         <section class="profile" aria-label="이동 프로필">
           <div class="profile-row">
-            <span>기본속도</span>
+            <span>기준 속도</span>
             <strong id="speedText">6.0 km/h</strong>
           </div>
           <label class="toggle-row">
@@ -54,7 +63,7 @@
           </label>
           <label class="input-row">
             <span>실측 시간</span>
-            <input id="calibrationInput" type="number" min="0.1" step="0.1" placeholder="분" />
+            <input id="calibrationInput" type="number" min="0.1" step="0.1" placeholder="분" inputmode="decimal" />
           </label>
           <div class="profile-actions">
             <button id="calibrateButton" type="button" disabled>속도 보정</button>
@@ -62,7 +71,7 @@
           </div>
         </section>
 
-        <section id="summaryPanel" class="summary" hidden>
+        <section id="summaryPanel" class="summary" hidden aria-live="polite">
           <div>
             <span>예상 시간</span>
             <strong id="timeValue">-</strong>
@@ -79,19 +88,35 @@
             <span>하강</span>
             <strong id="descentValue">-</strong>
           </div>
+          <dl id="breakdownList" class="breakdown-list" aria-label="시간 상세">
+            <div>
+              <dt>실외 보행</dt>
+              <dd id="outdoorTimeValue">-</dd>
+            </div>
+            <div>
+              <dt>건물 내부</dt>
+              <dd id="buildingTimeValue">-</dd>
+            </div>
+            <div>
+              <dt>셔틀</dt>
+              <dd id="shuttleTimeValue">-</dd>
+            </div>
+          </dl>
           <p id="snapWarning" class="warning" hidden></p>
           <p id="shuttleNotice" class="shuttle-notice" hidden></p>
         </section>
 
-        <section class="layers" aria-label="지도 레이어">
-          <h2>레이어</h2>
-          <label><input type="checkbox" data-layer="campus_boundary" checked /> 캠퍼스 경계</label>
-          <label><input type="checkbox" data-layer="osm_edges" /> OSM 보행 엣지</label>
-          <label><input type="checkbox" data-layer="entrances" /> 건물 입구</label>
-          <label><input type="checkbox" data-layer="elevation_nodes" /> 고도 노드</label>
-          <label><input type="checkbox" data-layer="manual_features" /> 수동 보정 구간</label>
-          <label><input type="checkbox" data-layer="shuttle_features" checked /> 셔틀 정류장</label>
-        </section>
+        <details class="layers">
+          <summary>지도 레이어</summary>
+          <div class="layer-options" aria-label="지도 레이어">
+            <label><input type="checkbox" data-layer="campus_boundary" checked /> 캠퍼스 경계</label>
+            <label><input type="checkbox" data-layer="osm_edges" /> OSM 보행 링크</label>
+            <label><input type="checkbox" data-layer="entrances" /> 건물 입구</label>
+            <label><input type="checkbox" data-layer="elevation_nodes" /> 고도 노드</label>
+            <label><input type="checkbox" data-layer="manual_features" /> 수동 보정 구간</label>
+            <label><input type="checkbox" data-layer="shuttle_features" checked /> 셔틀 정류장</label>
+          </div>
+        </details>
       </aside>
     </main>
   </body>

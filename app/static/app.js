@@ -7,6 +7,7 @@ const SPEED_STORAGE_KEY = "snu.baseWalkSpeedKmh";
 const state = {
   start: null,
   end: null,
+  selectionMode: "start",
   startMarker: null,
   endMarker: null,
   routeLayer: null,
@@ -31,6 +32,8 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const elements = {
   statusText: document.getElementById("statusText"),
+  selectStartButton: document.getElementById("selectStartButton"),
+  selectEndButton: document.getElementById("selectEndButton"),
   startText: document.getElementById("startText"),
   endText: document.getElementById("endText"),
   routeButton: document.getElementById("routeButton"),
@@ -45,6 +48,9 @@ const elements = {
   distanceValue: document.getElementById("distanceValue"),
   ascentValue: document.getElementById("ascentValue"),
   descentValue: document.getElementById("descentValue"),
+  outdoorTimeValue: document.getElementById("outdoorTimeValue"),
+  buildingTimeValue: document.getElementById("buildingTimeValue"),
+  shuttleTimeValue: document.getElementById("shuttleTimeValue"),
   snapWarning: document.getElementById("snapWarning"),
   shuttleNotice: document.getElementById("shuttleNotice"),
 };
@@ -53,26 +59,28 @@ const startIcon = pointIcon("start");
 const endIcon = pointIcon("end");
 
 map.on("click", (event) => {
-  if (!state.start || (state.start && state.end)) {
-    clearRoute();
-    setPoint("start", event.latlng);
-    clearPoint("end");
-    setStatus("도착지를 선택하세요.");
-    return;
+  clearRoute();
+  setPoint(state.selectionMode, event.latlng);
+
+  if (state.selectionMode === "start" && !state.end) {
+    setSelectionMode("end");
   }
 
-  setPoint("end", event.latlng);
-  setStatus("경로 찾기를 실행하세요.");
+  setSelectionStatus();
 });
 
+elements.selectStartButton.addEventListener("click", () => setSelectionMode("start"));
+elements.selectEndButton.addEventListener("click", () => setSelectionMode("end"));
 elements.routeButton.addEventListener("click", findRoute);
 elements.resetButton.addEventListener("click", resetSelection);
 elements.calibrateButton.addEventListener("click", calibrateSpeed);
 elements.clearSpeedButton.addEventListener("click", clearSpeedProfile);
 elements.calibrationInput.addEventListener("input", updatePointText);
+elements.allowShuttleInput.addEventListener("change", handleRouteOptionChange);
 
 initializeLayerToggles();
 renderSpeedProfile();
+setSelectionMode("start");
 
 function createMapPanes() {
   const panes = [
@@ -137,16 +145,48 @@ function setPoint(kind, latlng) {
   } else {
     state[markerKey] = L.marker(latlng, {
       icon,
+      draggable: true,
       pane: "pointPane",
       zIndexOffset: 1000,
       riseOnHover: true,
     }).addTo(map);
+
+    state[markerKey].on("dragstart", clearRoute);
+    state[markerKey].on("dragend", (event) => {
+      state[kind] = event.target.getLatLng();
+      setSelectionMode(kind);
+      updatePointText();
+      setSelectionStatus();
+    });
   }
 
   state[markerKey]
     .bindTooltip(label, { direction: "top", offset: [0, -10], sticky: true })
     .bindPopup(`${label}<br>${formatLatLng(latlng)}`);
   updatePointText();
+}
+
+function setSelectionMode(mode) {
+  state.selectionMode = mode;
+  const isStart = mode === "start";
+  elements.selectStartButton.classList.toggle("active", isStart);
+  elements.selectEndButton.classList.toggle("active", !isStart);
+  elements.selectStartButton.setAttribute("aria-pressed", String(isStart));
+  elements.selectEndButton.setAttribute("aria-pressed", String(!isStart));
+  setSelectionStatus();
+}
+
+function setSelectionStatus() {
+  if (!state.start) {
+    setStatus("출발지를 선택하세요.");
+    return;
+  }
+  if (!state.end) {
+    setStatus("도착지를 선택하세요.");
+    return;
+  }
+  const target = state.selectionMode === "start" ? "출발지" : "도착지";
+  setStatus(`${target}를 다시 찍거나 경로 찾기를 실행하세요.`);
 }
 
 function clearPoint(kind) {
@@ -173,8 +213,8 @@ function formatLatLng(latlng) {
 async function findRoute() {
   if (!state.start || !state.end) return;
 
-  elements.routeButton.disabled = true;
-  setStatus("계산 중...");
+  setRouteButtonBusy(true);
+  setStatus("경로를 계산하는 중입니다.");
 
   try {
     const response = await routeRequest();
@@ -192,7 +232,7 @@ async function findRoute() {
     elements.summaryPanel.hidden = true;
     setStatus(error.message);
   } finally {
-    elements.routeButton.disabled = !(state.start && state.end);
+    setRouteButtonBusy(false);
   }
 }
 
@@ -267,11 +307,31 @@ function renderSpeedProfile() {
   elements.speedText.textContent = `${speed.toFixed(1)} km/h`;
 }
 
+function setRouteButtonBusy(isBusy) {
+  elements.routeButton.disabled = isBusy || !(state.start && state.end);
+  elements.routeButton.textContent = isBusy ? "계산 중" : "경로 찾기";
+  elements.routeButton.setAttribute("aria-busy", String(isBusy));
+}
+
 function clearSpeedProfile() {
   state.baseWalkSpeedKmh = null;
   localStorage.removeItem(SPEED_STORAGE_KEY);
   renderSpeedProfile();
-  setStatus("기본속도 적용");
+  if (state.routeLayer && state.start && state.end) {
+    findRoute();
+    return;
+  }
+  setStatus("기본 속도를 적용했습니다.");
+}
+
+function handleRouteOptionChange() {
+  if (state.routeLayer && state.start && state.end) {
+    findRoute();
+    return;
+  }
+
+  const shuttleStatus = elements.allowShuttleInput.checked ? "포함" : "제외";
+  setStatus(`셔틀을 ${shuttleStatus}합니다. 경로 찾기를 실행하세요.`);
 }
 
 function drawRoute(geojson, summary) {
@@ -296,7 +356,7 @@ function drawRoute(geojson, summary) {
   }
 
   if (summary) {
-    state.routeLayer.bindTooltip(`${summary.total_time_min.toFixed(1)}분 / ${summary.total_length_m.toFixed(0)}m`);
+    state.routeLayer.bindTooltip(`${formatDuration(summary.total_time_sec)} / ${summary.total_length_m.toFixed(0)}m`);
   }
 }
 
@@ -319,10 +379,13 @@ function clearRoute() {
 
 function renderSummary(summary) {
   elements.summaryPanel.hidden = false;
-  elements.timeValue.textContent = `${summary.total_time_min.toFixed(1)}분`;
+  elements.timeValue.textContent = formatDuration(summary.total_time_sec);
   elements.distanceValue.textContent = `${summary.total_length_m.toFixed(0)}m`;
   elements.ascentValue.textContent = `${summary.total_ascent_m.toFixed(0)}m`;
   elements.descentValue.textContent = `${summary.total_descent_m.toFixed(0)}m`;
+  elements.outdoorTimeValue.textContent = formatDuration(summary.outdoor_walk_time_sec);
+  elements.buildingTimeValue.textContent = formatDuration(summary.building_internal_time_sec);
+  elements.shuttleTimeValue.textContent = formatDuration(summary.shuttle_time_sec);
 
   const startSnap = summary.start_snap_distance_m;
   const endSnap = summary.end_snap_distance_m;
@@ -346,6 +409,20 @@ function renderSummary(summary) {
 
 }
 
+function formatDuration(seconds) {
+  const safeSeconds = Number(seconds);
+  if (!Number.isFinite(safeSeconds) || safeSeconds < 0) return "-";
+
+  const minutes = safeSeconds / 60;
+  if (minutes < 1) {
+    return `${Math.round(safeSeconds)}초`;
+  }
+  if (minutes < 10) {
+    return `${minutes.toFixed(1)}분`;
+  }
+  return `${Math.round(minutes)}분`;
+}
+
 function setRouteStatus(summary, prefix = "최단시간 경로") {
   if (summary.uses_shuttle) {
     const waitMin = (summary.shuttle_wait_time_sec / 60).toFixed(1);
@@ -360,7 +437,7 @@ function resetSelection() {
   clearRoute();
   clearPoint("start");
   clearPoint("end");
-  setStatus("출발지를 선택하세요.");
+  setSelectionMode("start");
 }
 
 function setStatus(message) {
